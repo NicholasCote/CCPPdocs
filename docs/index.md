@@ -10,10 +10,3 @@ Follow our up to date [Kanban](https://jira.ucar.edu/secure/RapidBoard.jspa?rapi
 * Increase user visibility in to on-prem cloud offerings
 * Develop metrics to showcase project value & feasibility
 * Gain experience with Agile Project Management
-
-## MkDocs Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
