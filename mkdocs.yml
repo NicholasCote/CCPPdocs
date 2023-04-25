@@ -1,0 +1,11 @@
+site_name: CCPP Documentation
+site_url: https://jira.ucar.edu/secure/RapidBoard.jspa?rapidView=220&projectKey=CCPP
+site_description: Documentation for the CISL Cloud Pilot Program
+repo_url: https://github.com/NicholasCote/NCAR-viz
+nav:
+  - Home: index.md
+  - About: about.md
+  - Features: features.md
+  - Layout: layout.md
+  - Services: services.md
+theme: readthedocs
