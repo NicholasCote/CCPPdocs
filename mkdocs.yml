@@ -11,6 +11,6 @@ nav:
 theme: 
   name: readthedocs
   logo: 'images/ncar-cisl-white.png'
-  favicon: 'images/ncar-favicon.png'
+  favicon: 'images/ncar-favicon.ico'
 extra_css:
   - "css/extra.css"
