@@ -12,4 +12,5 @@ theme:
   name: readthedocs
   logo: 'images/ncar-cisl-white.png'
   favicon: 'images/ncar-favicon.png'
-
+extra_css:
+  - "css/extra.css"
