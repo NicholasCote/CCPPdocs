@@ -10,5 +10,5 @@ nav:
   - Services: services.md
 theme: 
   name: readthedocs
-  logo: 'images/ncar-cisl.svg'
+  logo: 'images/ncar-cisl.png'
 
