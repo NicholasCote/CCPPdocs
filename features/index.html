@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jira.ucar.edu/secure/RapidBoard.jspa/features/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Features - CCPP Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Features";
+        var mkdocs_page_input_path = "features.md";
+        var mkdocs_page_url = "/secure/RapidBoard.jspa/features/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../images/ncar-cisl-white.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Features</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#jupyterhub">JupyterHub</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#on-prem">On-Prem</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2i2c">2i2c</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#binderhub">BinderHub</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#container-registry">Container Registry</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#helm">Helm</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#connect-to-jupyterhub">Connect to JupyterHub</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#visualization">Visualization</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#templates">Templates</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-access">Data Access</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#glade">GLADE</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stratus">Stratus</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#api">API</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#loggingmetrics">Logging/Metrics</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#jupyterhub_1">JupyterHub</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#binderhub_1">BinderHub</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-access_1">Data Access</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#visualizations">Visualizations</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#backupsdr">Backups/DR</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rfes">RFE’s</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#slas">SLA’s</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../layout/">Layout</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../services/">Services</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">How-To</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../how-to/build-docs/">Build documentation</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">CCPP Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Features</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/NCAR/cisl-cloud/edit/master/docs/features.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="potential-ccpp-features">Potential CCPP Features</h1>
+<h2 id="jupyterhub">JupyterHub</h2>
+<h3 id="on-prem">On-Prem</h3>
+<ul>
+<li><a href="https://z2jh.jupyter.org/en/stable/administrator/authentication.html">Authentication</a><ul>
+<li><a href="https://allocations.access-ci.org/">ACCESS</a></li>
+</ul>
+</li>
+<li>Auto mounts</li>
+<li>Spawner</li>
+<li>GLADE RO</li>
+<li>Kernels</li>
+<li>Customizations</li>
+</ul>
+<h3 id="2i2c">2i2c</h3>
+<ul>
+<li>Authentication</li>
+<li>Auto mounts</li>
+<li>GLADE RO (?)</li>
+<li>Kernels</li>
+<li>Customizations</li>
+</ul>
+<p><a href="https://github.com/jupyterhub/nbgitpuller">nbgitpuller</a> (?)</p>
+<h2 id="binderhub">BinderHub</h2>
+<h3 id="container-registry">Container Registry</h3>
+<ul>
+<li>Only for repo2docker &amp; images we need?</li>
+</ul>
+<h3 id="helm">Helm</h3>
+<ul>
+<li>secrets.yml</li>
+<li>config.yml</li>
+<li>Helm Install Documentation</li>
+</ul>
+<h3 id="connect-to-jupyterhub">Connect to JupyterHub</h3>
+<ul>
+<li>config.yml</li>
+<li>Helm Upgrade Documentation</li>
+<li>Customizations</li>
+</ul>
+<h2 id="visualization">Visualization</h2>
+<h3 id="templates">Templates</h3>
+<ul>
+<li>Containers<ul>
+<li>Ingress config</li>
+</ul>
+</li>
+<li>VM’s<ul>
+<li>Terraform</li>
+<li>Ansible</li>
+</ul>
+</li>
+<li>Examples<ul>
+<li>https://visgallery.ucar.edu/</li>
+<li>https://ncar.github.io/psif2020ar/</li>
+<li>https://carbonplan.org/</li>
+<li>webext.cgd.ucar.edu</li>
+</ul>
+</li>
+</ul>
+<h2 id="data-access">Data Access</h2>
+<h3 id="glade">GLADE</h3>
+<ul>
+<li>Read Only Access for ease of access to datasets</li>
+</ul>
+<h3 id="stratus">Stratus</h3>
+<ul>
+<li>Object Storage</li>
+<li>On-prem S3 target (?)</li>
+</ul>
+<h3 id="api">API</h3>
+<ul>
+<li>Research Data Archive</li>
+<li>Geoscience Data Exchange</li>
+</ul>
+<h2 id="loggingmetrics">Logging/Metrics</h2>
+<h3 id="jupyterhub_1">JupyterHub</h3>
+<ul>
+<li>Number of interactions<ul>
+<li>username</li>
+<li>action</li>
+</ul>
+</li>
+</ul>
+<h3 id="binderhub_1">BinderHub</h3>
+<ul>
+<li>Prometheus</li>
+<li>Launch Events<ul>
+<li>Whenever new repo is launched</li>
+</ul>
+</li>
+</ul>
+<h3 id="data-access_1">Data Access</h3>
+<ul>
+<li>Specific sets</li>
+<li>Number of times queried</li>
+</ul>
+<h3 id="visualizations">Visualizations</h3>
+<ul>
+<li>User</li>
+<li>Number of requests</li>
+<li>System requirements</li>
+<li>OS</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li>Implementation instructions</li>
+<li>Configurations (GitHub)</li>
+<li>SLAs</li>
+<li>Backups/DR policies</li>
+<li>User How-To</li>
+</ul>
+<h2 id="backupsdr">Backups/DR</h2>
+<ul>
+<li>Define policies</li>
+<li>Implement for each use case</li>
+</ul>
+<h2 id="rfes">RFE’s</h2>
+<ul>
+<li>Link/email for user enhancement request</li>
+<li>Jira ticket opened for team triage</li>
+<li>Priority assigned</li>
+<li>Due dates negotiated</li>
+</ul>
+<h2 id="slas">SLA’s</h2>
+<ul>
+<li>Based on Jira ticket priority?</li>
+<li>JupyterHub<ul>
+<li>Uptime</li>
+<li>Backup policy</li>
+<li>DR policy</li>
+<li>Service Outage<ul>
+<li>P1</li>
+</ul>
+</li>
+<li>User issues<ul>
+<li>Priority 1-5</li>
+</ul>
+</li>
+<li>User RFE<ul>
+<li>Project is P5</li>
+<li>Due date for P5</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>BinderHub<ul>
+<li>Uptime</li>
+<li>Backup policy</li>
+<li>DR policy</li>
+<li>Service Outage<ul>
+<li>P1</li>
+</ul>
+</li>
+<li>User issues<ul>
+<li>Priority 1-5</li>
+</ul>
+</li>
+<li>User RFE<ul>
+<li>Project is P5</li>
+<li>Due date for P5</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Visualizations<ul>
+<li>Uptime</li>
+<li>Backup policy</li>
+<li>DR policy</li>
+<li>Service Outage<ul>
+<li>P1 or not?</li>
+</ul>
+</li>
+<li>User issues<ul>
+<li>Priority 1-5</li>
+</ul>
+</li>
+<li>User RFE<ul>
+<li>Project is P5</li>
+<li>Due date for P5</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Data Access<ul>
+<li>Inherit storage SLA</li>
+<li>API<ul>
+<li>Uptime</li>
+<li>RFE</li>
+<li>User issues</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../about/" class="btn btn-neutral float-left" title="About"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../layout/" class="btn btn-neutral float-right" title="Layout">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/NCAR/cisl-cloud" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../about/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../layout/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
