@@ -1,0 +1,67 @@
+/* Hide "Edit On GitHub" section*/
+.wy-breadcrumbs-aside { display: none !important;}
+
+/* Gets rid of the top breadcrumb */
+.wy-breadcrumbs { display: none; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.wy-side-nav-search {
+    background-color: #1A658F;
+}
+
+.wy-body-for-nav {
+    background-color: #C3D7EE;
+}
+
+.wy-menu-vertical {
+    background-color: #53565A;
+}
+
+/* style code blocks */
+pre code {
+    overflow: auto;
+    padding: 16px;
+    border-radius: 8px;
+    position: relative;
+    background-color: #f8f8f8;
+}
+
+code, .rst-content tt, .rst-content code {
+    overflow: auto;
+    color: inherit;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    display: inline-block;
+    white-space: nowrap;
+    width: 92%;
+}
+.rst-content tt.literal,.rst-content tt.literal,.rst-content code.literal {
+    color: inherit;
+}
+
+.clipboard {
+    position: relative;
+    display: block;
+    float: right;
+}
+
+.btn-clipboard {
+    position: relative;
+    top: 16px;
+    right: 10px;
+    z-index: 10;
+    border-radius: 8px;
+    display: block;
+    padding: .25rem .5rem;
+    cursor: pointer;
+}
+
+.caption-text {
+    color: #A8C700;
+    font-size: 16px;
+    margin-left: -8px;
+}
