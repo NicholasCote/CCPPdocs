@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Documentation for the CISL Cloud Pilot Program" /><link rel="canonical" href="https://jira.ucar.edu/secure/RapidBoard.jspa/?rapidView=220&projectKey=CCPP/" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>CCPP Documentation</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = "/secure/RapidBoard.jspa/";
+      </script>
+    
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".">
+          <img src="images/ncar-cisl-white.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pilot">Pilot</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#vision">Vision</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#what-is-an-on-premise-cloud">What is an on-premise cloud?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#goals">Goals</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="overview/about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="overview/use-cases/">Use Cases</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Availability</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="overview/availability/">Current Offering</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="overview/hw-resources/">Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="overview/features/">Potential Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="overview/services/">Potential Services</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="overview/contact/">Contact Us</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">How-Tos</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="how-to/agile/">Agile Interaction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="how-to/build-docs/">Documentation Site Build</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Kubernetes (k8s) JupyterHub</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="how-to/k8sJH/install/">Install JupyterHub on k8s</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">CCPP Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/NCAR/cisl-cloud/tree/main/docs/edit/master/docs/index.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p align="center">
+    <img src="images/ncar-cisl-blue.png">
+</p>
+
+<h1 id="welcome-to-the-cisl-cloud-pilot-project-ccpp">Welcome to the CISL Cloud Pilot Project (CCPP)</h1>
+<p>Follow our up to date <a href="https://jira.ucar.edu/secure/RapidBoard.jspa?rapidView=220&amp;projectKey=CCPP">Kanban</a>.</p>
+<h2 id="pilot"><strong><em>Pilot</em></strong></h2>
+<p><strong><em>This is currently a Pilot project. Determining long term feasibility is one of our objectives.</em></strong> </p>
+<h2 id="vision">Vision</h2>
+<p><em>Provide and operate an on-premise cloud offering for the scientific community to supplement traditional HPC services and public cloud offerings while utilizing 2i2c to host a JupyterHub instance in the public cloud.</em></p>
+<h4 id="what-is-an-on-premise-cloud">What is an on-premise cloud?</h4>
+<p>NCAR | CISL runs Compute, Storage &amp; Network hardware in robust Data Centers at multiple organizational facilities. An on-premise cloud is offering users the ability to utilize those highly available organizationally supported compute resources for approved use cases. This includes access to routable network space and UCAR Domain Name Systems (DNS). Security standards set by the organization are These resources would be provided to supplement computing needs that aren't fulfilled by the HPC offering, public cloud, or what is available to you locally. </p>
+<h2 id="goals">Goals</h2>
+<ul>
+<li>Improve understanding of how scientific community might use and benefit from an on-prem cloud<ul>
+<li>Which services fit on-prem better than traditional HPC and/or public cloud</li>
+</ul>
+</li>
+<li>Gain experience within CISL deploying and operating an on-prem cloud and associated services</li>
+<li>Improve CISL ability to support interactive analysis workflows in environment where data is globally distributed</li>
+<li>Increase user visibility in to on-prem cloud offerings</li>
+<li>Develop metrics to showcase project value &amp; feasibility</li>
+<li>Gain experience with Agile Project Management</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="overview/about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/NCAR/cisl-cloud/tree/main/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+      <span><a href="overview/about/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="js/popper.min.js" defer></script>
+      <script src="js/tippy-bundle.umd.js" defer></script>
+      <script src="js/clipboard.js" defer></script>
+      <script src="js/extra.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.4.2
+Build Date UTC : 2023-05-13 02:30:27.546038+00:00
+-->

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jira.ucar.edu/secure/RapidBoard.jspa/overview/features/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Potential Features - CCPP Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Potential Features";
+        var mkdocs_page_input_path = "overview/features.md";
+        var mkdocs_page_url = "/secure/RapidBoard.jspa/overview/features/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../images/ncar-cisl-white.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../use-cases/">Use Cases</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Availability</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../availability/">Current Offering</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../hw-resources/">Hardware</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Potential Features</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#jupyterhub">JupyterHub</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#on-prem">On-Prem</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2i2c-provided-aws-instance">2i2c Provided AWS Instance</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#binderhub">BinderHub</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#web-hosting">Web Hosting</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tutorials">Tutorials</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-access">Data Access</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#loggingmetrics">Logging/Metrics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#backupsdr">Backups/DR</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rfes">RFE’s</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#slas">SLA’s</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../services/">Potential Services</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contact/">Contact Us</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">How-Tos</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/agile/">Agile Interaction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/build-docs/">Documentation Site Build</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Kubernetes (k8s) JupyterHub</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../how-to/k8sJH/install/">Install JupyterHub on k8s</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">CCPP Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Availability &raquo;</li>
+      <li>Potential Features</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/NCAR/cisl-cloud/tree/main/docs/edit/master/docs/overview/features.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="potential-ccpp-features">Potential CCPP Features</h1>
+<h2 id="jupyterhub">JupyterHub</h2>
+<ul>
+<li>
+<h4 id="on-prem">On-Prem</h4>
+</li>
+<li>
+<h4 id="2i2c-provided-aws-instance">2i2c Provided AWS Instance</h4>
+</li>
+</ul>
+<h2 id="binderhub">BinderHub</h2>
+<h2 id="web-hosting">Web Hosting</h2>
+<h2 id="tutorials">Tutorials</h2>
+<h2 id="data-access">Data Access</h2>
+<h2 id="loggingmetrics">Logging/Metrics</h2>
+<h2 id="documentation">Documentation</h2>
+<h2 id="backupsdr">Backups/DR</h2>
+<h2 id="rfes">RFE’s</h2>
+<h2 id="slas">SLA’s</h2>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../hw-resources/" class="btn btn-neutral float-left" title="Hardware"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../services/" class="btn btn-neutral float-right" title="Potential Services">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/NCAR/cisl-cloud/tree/main/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../hw-resources/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../services/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../js/popper.min.js" defer></script>
+      <script src="../../js/tippy-bundle.umd.js" defer></script>
+      <script src="../../js/clipboard.js" defer></script>
+      <script src="../../js/extra.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
