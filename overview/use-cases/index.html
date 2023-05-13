@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jira.ucar.edu/secure/RapidBoard.jspa/overview/use-cases/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Use Cases - CCPP Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Use Cases";
+        var mkdocs_page_input_path = "overview/use-cases.md";
+        var mkdocs_page_url = "/secure/RapidBoard.jspa/overview/use-cases/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../images/ncar-cisl-white.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Use Cases</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#running-tutorials">Running Tutorials</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#jupyter-services">Jupyter Services</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#dask-on-jupyterhub">Dask on JupyterHub</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gpus-on-jupyterhub">GPUs on JupyterHub</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-access">Data Access</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#glade-access">GLADE Access</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#object-storage">Object Storage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#shared-storage">Shared Storage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#local-transfers">Local Transfers</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#web-visualization-hosting">Web Visualization Hosting</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#file-sharing">File Sharing</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creating-k8s-clusters">Creating k8s clusters</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#hosting-containerized-applications">Hosting Containerized Applications</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#hosting-virtual-machines-vms">Hosting Virtual Machines (VMs)</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Availability</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../availability/">Current Offering</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../hw-resources/">Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../features/">Potential Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../services/">Potential Services</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contact/">Contact Us</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">How-Tos</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/agile/">Agile Interaction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../how-to/build-docs/">Documentation Site Build</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Kubernetes (k8s) JupyterHub</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../how-to/k8sJH/install/">Install JupyterHub on k8s</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">CCPP Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Use Cases</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/NCAR/cisl-cloud/tree/main/docs/edit/master/docs/overview/use-cases.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="use-cases">Use Cases</h1>
+<h2 id="running-tutorials">Running Tutorials</h2>
+<p>An on-premise cloud would allow hosting of user tutorials in an environment controlled by the organization. Access to systems would be controlled by administrators and tutorial leaders in a programmatic way speeding up the on-boarding and off-boarding process. Golden images that allow an identical starting point for each tutorial would be hosted on shared storage. These images would be deployed and assigned to users in a programmatic way by administrators and tutorial leaders. Remote viewing access for users and administrators simultaneously would also create an environment where it was easier to help troubleshoot issues during the tutorials. If possible this would be best done on a Web UI as trying to use SSH and   </p>
+<h2 id="jupyter-services">Jupyter Services</h2>
+<p>JupyterHub is running on a bare metal kubernetes (k8s) cluster deployed with Rancher RKE2. This instance will have authentication for individual users. A user will be able to select from a few different sized environments, some offering GPU capabilities, and a new instance will be spun up with KubeSpawner from a base image. The base image will contain a few common kernels and packages but users will be able to customize their instance with the packages they require. Shared storage will be provided with a unique directory for each user to keep their files. GLADE read-only access will also be provided to each instance so datasets can be accessed from an internal nearby location. Dask services will also be provided in the form of dask.distributed, dask-kubernetes, dask-gateway, and dask-jobqueue for running against HPC resources. Web based visualization capabilities will also be provided but access to these websites hosted via JupyterHub will be limited to authorized users of the JupyterHub instance. </p>
+<h4 id="dask-on-jupyterhub">Dask on JupyterHub</h4>
+<ul>
+<li>Dask dashboard can be used to view resource utilization and is automatically started via Bokeh once a Dask scheduler is created. </li>
+<li>Dask Arrays can be used in place of NumPy for parallelized processing of larger-than-memory Arrays.</li>
+<li>Dask DataFrames can be used in place of pandas for parallelized processing of larger-than-memory DataFrames.</li>
+<li>Utilize Xarray open_mfdataset &amp; parallel=True to open multiple files as a single Xarray dataset in parallel with Dask Delayed.</li>
+<li>Dask Distributed can be utilized to create a local Dask Cluster or utilize HPC resources via dask-jobqueue.</li>
+<li>Running Project Pythia cookbooks such as <a href="https://projectpythia.org/cesm-lens-aws-cookbook/README.html">this one</a>.</li>
+<li>This <a href="https://github.com/NCAR/iPOGS/blob/main/notebooks/AMOCsig2_0.1deg_RCP_loop_time.ipynb">notebook</a> utilizes Xarray, Dask Array and Distributed together to allow calculation of the Meridional Overturning Circulation for a series of high resolution projections of ocean state under a climate change scenarios.</li>
+</ul>
+<h4 id="gpus-on-jupyterhub">GPUs on JupyterHub</h4>
+<ul>
+<li>GPU enabled Jupyter notebook servers can be provided to users who want to take advantage of parallel processing on GPU cores.</li>
+<li>Dask distributed will also be able to create workers with GPUs in order to utilize python modules like RAPIDS and CuPy.   </li>
+</ul>
+<h2 id="data-access">Data Access</h2>
+<h4 id="glade-access">GLADE Access</h4>
+<p>GLADE Access will be provided to JupyterHub instances for users to read GLADE datasets in a close location. An NFS mount to other resources hosted on CISL on-prem cloud hardware may be made available as well. </p>
+<h4 id="object-storage">Object Storage</h4>
+<p>CISL provides an Object Storage system named STRATUS with an API available to access S3 buckets in the same fashion as AWS. STRATUS will be utilized to provide API access to required datasets as well as possibly hosting terraform state files used in creating other user resources. Administrators on our STRATUS implementation will be responsible for user management and the creation and maintenance of new buckets. An elastic and flexible catalog for datasets will be implemented with preview or thumbnail methods to ensure access to the correct datasets. Uncoupling large datasets in to individual components will be part of the implementation process. </p>
+<h4 id="shared-storage">Shared Storage</h4>
+<p>Shared Storage will be provided to JupyterHub instances via the NFS protocol. Access to these mounts from other resources hosted on CISL on-prem cloud hardware may be made available as well.</p>
+<h4 id="local-transfers">Local Transfers</h4>
+<p>A method to allow for quick and easy data &amp; output transfers to local systems will be provided with detailed instructions. </p>
+<h2 id="web-visualization-hosting">Web Visualization Hosting</h2>
+<p>Real time interactive and customizable web visualizations will be hosted in various methods on CISL infrastructure. Applications such as Bokeh, Panel, Viola, etc. can host interactive visualizations from Jupyter Notebooks or Python applications. Users will be provided with a programmatic way to deploy these applications with public or private URLs in a stable highly available environment.</p>
+<h2 id="file-sharing">File Sharing</h2>
+<p>The CISL on-prem infrastructure provides a location that is easier to access and share information and files. Applications like NextCloud can be provisioned to host file sharing services. </p>
+<h2 id="creating-k8s-clusters">Creating k8s clusters</h2>
+<p>Rancher is part of the on-prem software stack and can be utilized to provision users their own k8s cluster for development or production use cases. Access to most storage resources can also be provided in these deployments. </p>
+<h2 id="hosting-containerized-applications">Hosting Containerized Applications</h2>
+<p>Users will be able to deploy their containerized applications in to the k8s cluster which provides a highly available and accessible hosting location. Smaller individual JupyterLab containers can be provisioned with the ability to host public facing web visualizations via notebooks and code running in the JupyterLab containers.</p>
+<h2 id="hosting-virtual-machines-vms">Hosting Virtual Machines (VMs)</h2>
+<p>If needed, VM's can also be provided either from pre configured templates or as bare instances and will be hosted either in a VMware cluster or the k8s cluster.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../about/" class="btn btn-neutral float-left" title="About"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../availability/" class="btn btn-neutral float-right" title="Current Offering">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/NCAR/cisl-cloud/tree/main/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../about/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../availability/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../js/popper.min.js" defer></script>
+      <script src="../../js/tippy-bundle.umd.js" defer></script>
+      <script src="../../js/clipboard.js" defer></script>
+      <script src="../../js/extra.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

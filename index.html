@@ -45,30 +45,53 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pilot">Pilot</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#vision">Vision</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#what-is-an-on-premise-cloud">What is an on-premise cloud?</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#goals">Goals</a>
     </li>
     </ul>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="about/">About</a>
+                <li class="toctree-l1"><a class="reference internal" href="overview/about/">About</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="features/">Features</a>
+                <li class="toctree-l1"><a class="reference internal" href="overview/use-cases/">Use Cases</a>
                 </li>
               </ul>
+              <p class="caption"><span class="caption-text">Availability</span></p>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="layout/">Layout</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="overview/availability/">Current Offering</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="overview/hw-resources/">Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="overview/features/">Potential Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="overview/services/">Potential Services</a>
+                  </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="services/">Services</a>
+                <li class="toctree-l1"><a class="reference internal" href="overview/contact/">Contact Us</a>
                 </li>
               </ul>
-              <p class="caption"><span class="caption-text">How-To</span></p>
+              <p class="caption"><span class="caption-text">How-Tos</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="how-to/build-docs/">Build documentation</a>
+                  <li class="toctree-l1"><a class="reference internal" href="how-to/agile/">Agile Interaction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="how-to/build-docs/">Documentation Site Build</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Kubernetes (k8s) JupyterHub</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="how-to/k8sJH/install/">Install JupyterHub on k8s</a>
+                </li>
+    </ul>
                   </li>
               </ul>
       </div>
@@ -87,7 +110,7 @@
     <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
       <li>Home</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/NCAR/cisl-cloud/edit/master/docs/index.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/NCAR/cisl-cloud/tree/main/docs/edit/master/docs/index.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -95,9 +118,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <p><img alt="image info" src="images/CirrusCISL.png" /></p>
-<h1 id="welcome-to-ccpp">Welcome to CCPP</h1>
+                <p align="center">
+    <img src="images/ncar-cisl-blue.png">
+</p>
+
+<h1 id="welcome-to-the-cisl-cloud-pilot-project-ccpp">Welcome to the CISL Cloud Pilot Project (CCPP)</h1>
 <p>Follow our up to date <a href="https://jira.ucar.edu/secure/RapidBoard.jspa?rapidView=220&amp;projectKey=CCPP">Kanban</a>.</p>
+<h2 id="pilot"><strong><em>Pilot</em></strong></h2>
+<p><strong><em>This is currently a Pilot project. Determining long term feasibility is one of our objectives.</em></strong> </p>
+<h2 id="vision">Vision</h2>
+<p><em>Provide and operate an on-premise cloud offering for the scientific community to supplement traditional HPC services and public cloud offerings while utilizing 2i2c to host a JupyterHub instance in the public cloud.</em></p>
+<h4 id="what-is-an-on-premise-cloud">What is an on-premise cloud?</h4>
+<p>NCAR | CISL runs Compute, Storage &amp; Network hardware in robust Data Centers at multiple organizational facilities. An on-premise cloud is offering users the ability to utilize those highly available organizationally supported compute resources for approved use cases. This includes access to routable network space and UCAR Domain Name Systems (DNS). Security standards set by the organization are These resources would be provided to supplement computing needs that aren't fulfilled by the HPC offering, public cloud, or what is available to you locally. </p>
 <h2 id="goals">Goals</h2>
 <ul>
 <li>Improve understanding of how scientific community might use and benefit from an on-prem cloud<ul>
@@ -114,7 +146,7 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="overview/about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -137,18 +169,22 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
         <span>
-          <a href="https://github.com/NCAR/cisl-cloud" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/NCAR/cisl-cloud/tree/main/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
         </span>
     
     
     
-      <span><a href="about/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="overview/about/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme_extra.js" defer></script>
     <script src="js/theme.js" defer></script>
+      <script src="js/popper.min.js" defer></script>
+      <script src="js/tippy-bundle.umd.js" defer></script>
+      <script src="js/clipboard.js" defer></script>
+      <script src="js/extra.js" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {
@@ -161,5 +197,5 @@
 
 <!--
 MkDocs version : 1.4.2
-Build Date UTC : 2023-05-13 02:27:25.113767+00:00
+Build Date UTC : 2023-05-13 02:30:27.546038+00:00
 -->

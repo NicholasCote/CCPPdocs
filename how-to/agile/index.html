@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jira.ucar.edu/secure/RapidBoard.jspa/how-to/agile/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Agile Interaction - CCPP Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Agile Interaction";
+        var mkdocs_page_input_path = "how-to/agile.md";
+        var mkdocs_page_url = "/secure/RapidBoard.jspa/how-to/agile/";
+      </script>
+    
+    <script src="../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../images/ncar-cisl-white.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../overview/about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../overview/use-cases/">Use Cases</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Availability</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../overview/availability/">Current Offering</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../overview/hw-resources/">Hardware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../overview/features/">Potential Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../overview/services/">Potential Services</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../overview/contact/">Contact Us</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">How-Tos</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Agile Interaction</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-agile-project-management">What is Agile Project Management?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-waterfall">What is Waterfall?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-kanban">What is Kanban?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-are-user-stories">What are User Stories?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-is-acceptance-criteria">What is Acceptance Criteria?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-do-i-interact-with-the-team">How do I interact with the team?</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#via-the-agile-product-owner-po">Via the Agile Product Owner (PO)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#kanban-board">Kanban Board</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#demonstrations">Demonstrations</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#retrospectives">Retrospectives</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../build-docs/">Documentation Site Build</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Kubernetes (k8s) JupyterHub</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../k8sJH/install/">Install JupyterHub on k8s</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">CCPP Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>How-Tos &raquo;</li>
+      <li>Agile Interaction</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/NCAR/cisl-cloud/tree/main/docs/edit/master/docs/how-to/agile.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="agile-interaction">Agile Interaction</h1>
+<p>The <strong><em>CCPP</em></strong> team is utilizing hybrid Agile Project Management strategies (Kanban &amp; Waterfall) to manage development.</p>
+<h2 id="what-is-agile-project-management">What is Agile Project Management?</h2>
+<p>At a high level Agile is a framework that focuses on interaction, collaboration, and visibility in order to predictably deliver working product that meets all customer requirements. </p>
+<h2 id="what-is-waterfall">What is Waterfall?</h2>
+<p>Waterfall methodology is a project management approach that maps out a project into distinct phases. The CCPP team will be utilizing Waterfall to manage overall project status and track deliverables. </p>
+<p>The current Waterfall smartsheet rollup can be viewed <a href="https://app.smartsheet.com/sheets/5mfXWXXfQ7wHR3J5vvpwjW2W4M4hvpvJH5P37G91">here</a>.</p>
+<h2 id="what-is-kanban">What is Kanban?</h2>
+<p>Kanban is a flexible Agile framework with a focus on continuous delivery. Individual work items are called User Stories and are represented visually on a Kanban Board. </p>
+<h2 id="what-are-user-stories">What are User Stories?</h2>
+<p>An informal explanation of a feature written from the perspective of the end user. The goal is to keep this short and simple so that it can be accomplished in a few days. If it will take more than a few days the issue needs to be looked at in more detail and broken down in to smaller batch sizes. This allows for a continuous feedback loop where small pieces of overall functionality are demonstrated to the user base. These small pieces of functionality are defined in the User Stories Acceptance Criteria.</p>
+<h2 id="what-is-acceptance-criteria">What is Acceptance Criteria?</h2>
+<p>In order to make sure the User Story has a clear definition of being done the PO will define Acceptance Criteria. It is written from a user perspective and defines a requirement, why it is needed, and what expectations are for successful completion. </p>
+<p><strong><em>Example:</em></strong><br>
+<em>As a CCPP User I want to understand what Acceptance Criteria is so that I can ensure my completed user story meets my expectations of done.</em></p>
+<h2 id="how-do-i-interact-with-the-team">How do I interact with the team?</h2>
+<h3 id="via-the-agile-product-owner-po">Via the Agile Product Owner (PO)</h3>
+<p>All requests &amp; questions can be directed to the Product Owner (PO) for the project. <a href="mailto:ncote@ucar.edu">Nick Cote</a> is the Agile Product owner for this project. The Agile PO's responsibility is representing the customer and stakeholder and is their interface to the development team. This allows the development team members to focus on delivering valuable working product while the customer is still being accurately represented via the PO. All requests directed at the PO will be turned in to user stories on our Kanban Board. </p>
+<h3 id="kanban-board"><strong><em><a href="https://jira.ucar.edu/secure/RapidBoard.jspa?rapidView=220&amp;projectKey=CCPP">Kanban Board</a></em></strong></h3>
+<p>Issues can also be created in Jira and added to our Kanban backlog. The PO will ensure your request is understood and has valid acceptance criteria. It will then be prioritized appropriately against other tasks in the queue. </p>
+<p>The CCPP Kanban board currently implements the follow story states:</p>
+<pre><code>    Backlog # New stories that have not yet been fully reviewed and prioritized
+    To Do # Stories have been reviewed and prioritized
+    Stalled # Work is on hold for various reasons
+    In Progress # A team member is actively working the Story
+    In Review # PO will check to make sure the Story Acceptance Criteria is met
+    Done # Acceptance Criteria has been verified successfully and the Story is complete
+</code></pre>
+<p>User Stories are self-assigned by a team member who wants to accomplish the task. A User Story will move from a status of <strong><em>To Do</em></strong> &rarr; <strong><em>In Progress</em></strong> when it is the at the top of the Assignee's <strong><em>To Do</em></strong> list and they are ready to start. Kanban utilizes Work In Progress (WIP) limits to help identify bottlenecks and promoting moving tasks to <strong><em>Done</em></strong>. The CCPP has implemented the following WIP limits:</p>
+<pre><code>    Stalled : 4
+    In Progress : 6
+    In Review : 4
+</code></pre>
+<h3 id="demonstrations">Demonstrations</h3>
+<p>As new functionality is rolled out we will be taking advantage of different platforms to demonstrate working products to our stakeholders. Feedback is strongly desired during these demonstrations in order to ensure what the team is delivering is accurately meeting the user requirements. These interactions make sure the team is continuously improving.</p>
+<h2 id="retrospectives">Retrospectives</h2>
+<p>Once a month the team will look back on the process overall. The focus will be on what has been working, what hasn't been working, and what improvements should we try in order to improve the process for our workflow. </p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../overview/contact/" class="btn btn-neutral float-left" title="Contact Us"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../build-docs/" class="btn btn-neutral float-right" title="Documentation Site Build">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/NCAR/cisl-cloud/tree/main/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../../overview/contact/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../build-docs/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../js/popper.min.js" defer></script>
+      <script src="../../js/tippy-bundle.umd.js" defer></script>
+      <script src="../../js/clipboard.js" defer></script>
+      <script src="../../js/extra.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
