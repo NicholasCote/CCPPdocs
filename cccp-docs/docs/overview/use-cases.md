@@ -46,3 +46,9 @@ Users will be able to deploy their containerized applications in to the k8s clus
 
 ## Hosting Virtual Machines (VMs)
 If needed, VM's can also be provided either from pre configured templates or as bare instances and will be hosted either in a VMware cluster or the k8s cluster.
+
+## Continuous Integration (CI) Platform
+CI tools like Jenkins can be hosted to run automated test suites on new code deployments. 
+
+## Development Environment
+Development and testing the migration of existing workflows to platform independent micro services in a low/no cost environment. 
