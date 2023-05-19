@@ -75,13 +75,19 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Documentation Site Build</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-make-sure-you-have-mkdocs-installed">1.  Make sure you have MkDocs installed</a>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-deploy-on-github-pages">How to deploy on GitHub Pages</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-clone-the-git-repository">2.  Clone the git repository</a>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-build-locally">How to build locally</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-make-sure-you-have-mkdocs-installed">1.  Make sure you have MkDocs installed</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-change-in-to-docsdirectory">3.  Change in to docs/directory</a>
+    <li class="toctree-l3"><a class="reference internal" href="#2-clone-the-git-repository">2.  Clone the git repository</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4-serve-content-with-mkdocs">4.  Serve content with MkDocs</a>
+    <li class="toctree-l3"><a class="reference internal" href="#3-change-in-to-docsdirectory">3.  Change in to docs/directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-serve-content-with-mkdocs">4.  Serve content with MkDocs</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#documentation-file-structure">Documentation file structure</a>
     </li>
@@ -124,19 +130,28 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="how-to-build-this-documentation">How to build this documentation</h1>
+<h2 id="how-to-deploy-on-github-pages">How to deploy on GitHub Pages</h2>
+<p>This will create a branch inside the GitHub repository named <strong><em>gh-pages</em></strong> that GitHub will automatically setup to serve as the base for GitHub Pages</p>
+<pre><code>git clone https://github.com/NCAR/cisl-cloud.git
+cd docs/
+mkdocs gh-deploy --config-file mkdocs.yml --clean
+</code></pre>
+<p>The documentation should now be viewable at : <a href="https://nicholascote.github.io/CCPPdocs/">https://cisl-cloud.github.io/cisl-cloud/</a></p>
+<h2 id="how-to-build-locally">How to build locally</h2>
 <h4 id="1-make-sure-you-have-mkdocs-installed">1.  Make sure you have MkDocs installed</h4>
-<pre><code>pip install mkdocs
+<pre><code>`pip install mkdocs`
 </code></pre>
 <h4 id="2-clone-the-git-repository">2.  Clone the git repository</h4>
-<pre><code>git clone https://github.com/NCAR/cisl-cloud.git
+<pre><code>`git clone https://github.com/NCAR/cisl-cloud.git`
 </code></pre>
 <h4 id="3-change-in-to-docsdirectory">3.  Change in to docs/directory</h4>
-<pre><code>cd docs/
+<pre><code>`cd docs/`
 </code></pre>
 <h4 id="4-serve-content-with-mkdocs">4.  Serve content with MkDocs</h4>
-<pre><code>mkdocs serve
+<pre><code>`mkdocs serve`
 </code></pre>
-<p><br></p>
+<p><br>
+The documentation should now be available locally <a href="http://127.0.0.1:8000/">here</a></p>
 <hr>
 <h2 id="documentation-file-structure">Documentation file structure</h2>
 <pre><code>mkdocs.yml    # The configuration file.

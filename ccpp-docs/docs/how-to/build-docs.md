@@ -1,14 +1,27 @@
 # How to build this documentation
 
+## How to deploy on GitHub Pages
+
+This will create a branch inside the GitHub repository named ***gh-pages*** that GitHub will automatically setup to serve as the base for GitHub Pages
+```
+git clone https://github.com/NCAR/cisl-cloud.git
+cd docs/
+mkdocs gh-deploy --config-file mkdocs.yml --clean
+```
+The documentation should now be viewable at : [https://cisl-cloud.github.io/cisl-cloud/](https://nicholascote.github.io/CCPPdocs/)
+
+## How to build locally
+
 #### 1.  Make sure you have MkDocs installed
-    pip install mkdocs
+    `pip install mkdocs`
 #### 2.  Clone the git repository
-    git clone https://github.com/NCAR/cisl-cloud.git
+    `git clone https://github.com/NCAR/cisl-cloud.git`
 #### 3.  Change in to docs/directory
-    cd docs/
+    `cd docs/`
 #### 4.  Serve content with MkDocs
-    mkdocs serve
+    `mkdocs serve`
 <br>
+The documentation should now be available locally [here](http://127.0.0.1:8000/)
 <hr>
 ## Documentation file structure
 
