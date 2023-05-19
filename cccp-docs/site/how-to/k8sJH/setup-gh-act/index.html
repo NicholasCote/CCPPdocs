@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jira.ucar.edu/secure/RapidBoard.jspa/how-to/k8sJH/install/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jira.ucar.edu/secure/RapidBoard.jspa/how-to/k8sJH/setup-gh-act/" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Install JupyterHub on k8s - CCPP Documentation</title>
+    <title>Setup GitHub Action to Build and Push Docker Image - CCPP Documentation</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,9 +13,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Install JupyterHub on k8s";
-        var mkdocs_page_input_path = "how-to/k8sJH/install.md";
-        var mkdocs_page_url = "/secure/RapidBoard.jspa/how-to/k8sJH/install/";
+        var mkdocs_page_name = "Setup GitHub Action to Build and Push Docker Image";
+        var mkdocs_page_input_path = "how-to/k8sJH/setup-gh-act.md";
+        var mkdocs_page_url = "/secure/RapidBoard.jspa/how-to/k8sJH/setup-gh-act/";
       </script>
     
     <script src="../../../js/jquery-3.6.0.min.js" defer></script>
@@ -77,13 +77,15 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Kubernetes (k8s) JupyterHub</a>
     <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Install JupyterHub on k8s</a>
-    <ul class="current">
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../install/">Install JupyterHub on k8s</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../customize-docker/">Customize Jupyter Docker Image</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../setup-gh-act/">Setup GitHub Action to Build and Push Docker Image</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Setup GitHub Action to Build and Push Docker Image</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#example-githubworkflowsbuild-push-basenbyaml">Example .github/workflows/build-push-basenb.yaml</a>
+    </li>
+    </ul>
                 </li>
     </ul>
                   </li>
@@ -104,9 +106,9 @@
     <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>How-Tos &raquo;</li>
           <li>Kubernetes (k8s) JupyterHub &raquo;</li>
-      <li>Install JupyterHub on k8s</li>
+      <li>Setup GitHub Action to Build and Push Docker Image</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/NCAR/cisl-cloud/tree/main/docs/edit/master/docs/how-to/k8sJH/install.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/NCAR/cisl-cloud/tree/main/docs/edit/master/docs/how-to/k8sJH/setup-gh-act.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -114,13 +116,70 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="install-jupyterhub-on-k8s">Install JupyterHub on k8s</h1>
+                <h1 id="setup-github-actions-to-build-docker-image-automatically">Setup GitHub actions to Build Docker image automatically</h1>
+<p>As part of having a continuous integration workflow GitHub actions is utilized to rebuild Docker images whenever new code is pushed to a specific directory.</p>
+<p>In order to utilize GitHub actions a directory named <strong><em>.github</em></strong> needs to be created in the base directory of the repository.
+The <strong><em>.github</em></strong> directory should also contain a directory named <strong><em>workflows</em></strong> in order to store and run the different <a href="https://docs.github.com/en/actions/using-workflows/about-workflows">workflows</a> created.
+The workflow itself is a <a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions"><strong><em>yaml</em></strong></a> file that defines the actions that <a href="https://docs.github.com/en/actions/using-workflows/triggering-a-workflow">trigger</a> and execute what is required for the continuous integration application. </p>
+<h2 id="example-githubworkflowsbuild-push-basenbyaml">Example <strong><em>.github/workflows/build-push-basenb.yaml</em></strong></h2>
+<p>This example workflow utilizes a few different github actions to build a docker image and push it to a container registry. Each step is explained in detail via inline comments. </p>
+<pre><code># This workflow builds docker images and pushes them to a Docker Hub Repository
+# This workflow is specific to the base-notebook directory and image
+# Set the workflow name
+name: Deploy base-notebook
+
+# Define the trigger that starts the action
+# For this workflow the trigger is on a push that changes anything in the configs/jupyter/base-notebook/ path
+on:
+  push:
+    paths:
+      - configs/jupyter/base-notebook/**
+
+# Define the actions that are going to take place as part of this workflow    
+jobs:
+  # Name the job(s)
+  deploy-docker-base-notebook:
+    # Define where the job should run in this case it will be run on the latest ubuntu image
+    runs-on: ubuntu-latest
+    # Set the steps to take in order
+    steps:
+      # Step 1 is to checkout the github repo used to build the Dockerfile
+      - name: Check out the repo
+        uses: actions/checkout@v3
+      # Step 2 is to login to docker hub so the image can be pushed
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        # GitHub secrets are used to provide login information to docker hub
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN  }}
+      # Pull relevant metadata out of the docker image used
+      # This can be expanded upon
+      - name: Extract metadata for Docker
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ncote/cisl-cloud-base
+      # Build and push the docker image
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v4
+        with:
+          # Provide the current directory as build context 
+          context: .
+          # Specify where the Dockerfile is located in relation to the repo base path
+          file: configs/jupyter/base-notebook/Dockerfile
+          # Enable the push to docker hub
+          push: true
+          # Provide the tags to apply to the image, this example uses the latest image tag 
+          tags: ncote/cisl-cloud-base:latest
+          # Apply labels as defined in the Docker image metadata
+          labels: ${{ steps.meta.outputs.labels }}
+</code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../build-docs/" class="btn btn-neutral float-left" title="Documentation Site Build"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../customize-docker/" class="btn btn-neutral float-right" title="Customize Jupyter Docker Image">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../customize-docker/" class="btn btn-neutral float-left" title="Customize Jupyter Docker Image"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -147,10 +206,8 @@
         </span>
     
     
-      <span><a href="../../build-docs/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../customize-docker/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../customize-docker/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

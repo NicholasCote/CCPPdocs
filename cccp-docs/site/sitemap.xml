@@ -16,7 +16,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://jira.ucar.edu/secure/RapidBoard.jspa/how-to/k8sJH/customize-docker/</loc>
+         <lastmod>2023-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://jira.ucar.edu/secure/RapidBoard.jspa/how-to/k8sJH/install/</loc>
+         <lastmod>2023-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jira.ucar.edu/secure/RapidBoard.jspa/how-to/k8sJH/setup-gh-act/</loc>
          <lastmod>2023-05-19</lastmod>
          <changefreq>daily</changefreq>
     </url>

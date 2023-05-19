@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jira.ucar.edu/secure/RapidBoard.jspa/how-to/k8sJH/install/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jira.ucar.edu/secure/RapidBoard.jspa/how-to/k8sJH/customize-docker/" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Install JupyterHub on k8s - CCPP Documentation</title>
+    <title>Customize Jupyter Docker Image - CCPP Documentation</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
@@ -13,9 +13,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Install JupyterHub on k8s";
-        var mkdocs_page_input_path = "how-to/k8sJH/install.md";
-        var mkdocs_page_url = "/secure/RapidBoard.jspa/how-to/k8sJH/install/";
+        var mkdocs_page_name = "Customize Jupyter Docker Image";
+        var mkdocs_page_input_path = "how-to/k8sJH/customize-docker.md";
+        var mkdocs_page_url = "/secure/RapidBoard.jspa/how-to/k8sJH/customize-docker/";
       </script>
     
     <script src="../../../js/jquery-3.6.0.min.js" defer></script>
@@ -77,11 +77,11 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Kubernetes (k8s) JupyterHub</a>
     <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">Install JupyterHub on k8s</a>
+                <li class="toctree-l2"><a class="reference internal" href="../install/">Install JupyterHub on k8s</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Customize Jupyter Docker Image</a>
     <ul class="current">
     </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../customize-docker/">Customize Jupyter Docker Image</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../setup-gh-act/">Setup GitHub Action to Build and Push Docker Image</a>
                 </li>
@@ -104,9 +104,9 @@
     <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>How-Tos &raquo;</li>
           <li>Kubernetes (k8s) JupyterHub &raquo;</li>
-      <li>Install JupyterHub on k8s</li>
+      <li>Customize Jupyter Docker Image</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/NCAR/cisl-cloud/tree/main/docs/edit/master/docs/how-to/k8sJH/install.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/NCAR/cisl-cloud/tree/main/docs/edit/master/docs/how-to/k8sJH/customize-docker.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -114,13 +114,79 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="install-jupyterhub-on-k8s">Install JupyterHub on k8s</h1>
+                <h1 id="how-to-customize-a-jupyter-docker-image-for-single-users">How to Customize a Jupyter Docker Image for Single Users</h1>
+<p>The Jupyter environment spun up for the users can be customized by building on top of the base Jupyter Docker image. For this use case the scipy-notebook image from Jupyter is used. That image is built upon other customized images with the base using the ubuntu:22.04 image. </p>
+<p>This example Dockerfile has comments inline to explain what the lines are doing</p>
+<pre><code># NCAR CISL Customized version of the Jupyter scipy-notebook Docker image
+# https://github.com/jupyter/docker-stacks/blob/main/scipy-notebook/
+# This is built on a collection of Docker images from jupyter but the base image is ubuntu:22.04
+# https://github.com/jupyter/docker-stacks/blob/main/docker-stacks-foundation/Dockerfile
+
+ARG BASE_CONTAINER=jupyter/scipy-notebook:latest
+FROM $BASE_CONTAINER
+
+# Replace with team name and email
+LABEL maintainer=&quot;Nick Cote &lt;ncote@ucar.edu&gt;&quot;
+
+# Set to root user for apt-get commands to follow
+USER root
+
+# Update to the latest package version list
+RUN apt-get update --yes &amp;&amp; \
+# Install required OS packages and force yes to any installation prompts
+    apt-get install --yes --no-install-recommends \
+# List of OS packages to be installed
+    vim \
+    curl \
+    emacs &amp;&amp; \
+# Clear /var/cache/apt directories that contain leftover pacakge files 
+    apt-get clean &amp;&amp; \
+# Remove lists of available packages to save space
+    rm -rf /var/lib/apt/lists/*
+
+# Copy environment.yml file with list of python packages to be installed to the user home directory
+COPY configs/jupyter/base-notebook/environment.yml /home/$NB_USER/
+
+# Switch to local user for installing user level packages
+USER $NB_UID
+
+# Run a list of commands in user space to install packages and clean up environment
+# mamba is used instead of conda to speed up the installation
+RUN mamba install --quiet --yes \
+# nb_conda_kernels is required to save user environments as custom user notebook kernels that persist
+    'conda-forge::nb_conda_kernels' &amp;&amp; \
+# Create a kernel named cisl-cloud-base from the environment.yml file
+    mamba env update --name cisl-cloud-base -f environment.yml &amp;&amp; \
+# Install nbgitpuller via pip 
+    pip install --no-cache-dir nbgitpuller &amp;&amp; \
+# Use mamba to remove unused packages and caches including writable packages and do no ask to confirm
+    mamba clean --all -f -y &amp;&amp; \
+# Use jupyter lab to remove unused packages and caches and do no ask to confirm
+    jupyter lab clean -y &amp;&amp; \
+# Use npm to remove data in cache and do no ask to confirm
+    npm cache clean --force &amp;&amp; \
+# Remove unneeded cache files
+    rm -rf /home/$NB_USER/.cache/yarn &amp;&amp; \
+    rm -rf /home/$NB_USER/.node-gyp &amp;&amp; \
+# Remove the environment.yml file to allow permissions to be correct
+    rm environment.yml &amp;&amp; \
+# Run jupyter fix-permissions script to make sure all files are writable
+    fix-permissions $CONDA_DIR &amp;&amp; \
+    fix-permissions /home/$NB_USER
+
+# Copy the .condarc file to allow for saving of user custom conda environments
+COPY configs/jupyter/base-notebook/.condarc /
+COPY configs/jupyter/base-notebook/environment.yml /
+
+# Make sure the notebook user is set to be the default
+USER $NB_UID
+</code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../build-docs/" class="btn btn-neutral float-left" title="Documentation Site Build"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../customize-docker/" class="btn btn-neutral float-right" title="Customize Jupyter Docker Image">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../install/" class="btn btn-neutral float-left" title="Install JupyterHub on k8s"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../setup-gh-act/" class="btn btn-neutral float-right" title="Setup GitHub Action to Build and Push Docker Image">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -147,10 +213,10 @@
         </span>
     
     
-      <span><a href="../../build-docs/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../install/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../customize-docker/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../setup-gh-act/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
