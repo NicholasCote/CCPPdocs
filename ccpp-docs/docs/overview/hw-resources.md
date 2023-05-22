@@ -1,12 +1,22 @@
 # Hardware Resources
 
-## Initial Resource (5/1/23)
+## Initial Resources (5/1/23)
 
-### Compute Resources
+### Compute Resources (5 Nodes)
 
-| QTY | Manufacturer | Model | CPU Type | CPU Speed | CPU Cores | RAM (GB) | GPU Model | GPU Cores | GPU Memory | NICs | Storage |
-|---|---|----|---|---|---|---|---|---|---|---|---|
-| 5 | Supermicro | SYS-120U-TNR | Intel Xeon Gold 6326 | 2.90 GHz | 16 | 512 | Nvidia A2 Tensor | 1280 | 16 GB | 2x10G & 4x25G | 2x100GB & 6x1.6TB NVMe|
+| System Information | Node Specifications |
+|---|---|
+| Manufacturer | Supermicro |
+| Model | SYS-120U-TNR | 
+| CPU Type | Intel Xeon Gold 6326 |
+| CPU Speed | 2.90 GHz |
+| CPU Cores | 16 | 
+| RAM (GB) | 512 |
+| GPU Model | Nvidia A2 Tensor |
+| GPU Cores | 1280 |
+| GPU Memory | 16 GB |
+| NICs | 2x10G & 4x25G |
+| Storage | 2x100GB & 6x1.6TB NVMe |     
 
 #### Totals
 
