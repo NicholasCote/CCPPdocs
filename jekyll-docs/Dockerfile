@@ -15,6 +15,6 @@ FROM jekyll as jekyll-serve
 
 WORKDIR /CCPPdocs/jekyll-docs
 
-CMD ["bundle", "install"]
+RUN bundle install
 
 CMD ["bundle", "exec", "jekyll", "serve"]
