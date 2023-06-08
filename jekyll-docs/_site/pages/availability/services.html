@@ -30,8 +30,8 @@
 </head>
 
 
-<body class="ncar with-sidebar test">
-    <div class="content-wrapper">
+<body class="ncar no-banner with-sidebar">
+<div class="content-wrapper">
     <header>
     <div data-sticky-container="" class="sticky-container">
         <div data-sticky="" data-options="marginTop:0;stickyOn:small;" data-top-anchor="main-content"
@@ -100,29 +100,7 @@
                                 
                                 <li aria-label="Hardware"><a class="text-left" href="/pages/availability/hw-resources.html">Hardware</a></li>
                                 
-                                <li aria-label="Potential Features"><a class="text-left" href="/pages/availability/features.html">Potential Features</a></li>
-                                
                                 <li aria-label="Potential Services"><a class="text-left" href="/pages/availability/services.html">Potential Services</a></li>
-                                
-                            </ul>
-                            
-                        </li>
-                        
-                        <li aria-label="How-Tos">
-                            <a class="text-center" href="/pages/how-to/index.html">How-Tos</a>
-                            
-                            <ul class="menu">
-                                <li aria-label="How-Tos"><a class="text-center" href="/pages/how-to/index.html">Overview</a></li>
-                                
-                                <li aria-label="Agile Interaction"><a class="text-left" href="/pages/how-to/agile.html">Agile Interaction</a></li>
-                                
-                                <li aria-label="Build Documentation"><a class="text-left" href="/pages/how-to/build-docs.html">Build Documentation</a></li>
-                                
-                                <li aria-label="Install JupyterHub on K8s"><a class="text-left" href="/pages/how-to/k8sJH/install.html">Install JupyterHub on K8s</a></li>
-                                
-                                <li aria-label="Create custom Jupyter container"><a class="text-left" href="/pages/how-to/k8sJH/customize-docker.html">Create custom Jupyter container</a></li>
-                                
-                                <li aria-label="Setup GitHub action to build and push Docker Images"><a class="text-left" href="/pages/how-to/k8sJH/setup-gh-act.html">Setup GitHub action to build and push Docker Images</a></li>
                                 
                             </ul>
                             
@@ -141,27 +119,12 @@
     </div>
 </header>
 
-        <div class="body-content" id="main-content">
-            <div class="cell banner">
-    <div class="grid-x align-center-middle">
-        <div class="cell text-center">
-            <div class="grid-y banner-content">
-                <h1 class="cell">CISL Cloud Pilot</h1>
-                <p class="cell" style="color:#fff; font-size:1.4rem;">Check progress on our up to date Kanban</p>
-                <div class="cell">
-                    <a class="cta-link large white-on-color" href="https://jira.ucar.edu/secure/RapidBoard.jspa?rapidView=220&projectKey=CCPP" target="_blank">Link to Kanban Page</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-            <section class="panel primary-content">
+    <div class="body-content" id="main-content">
+        <section class="panel primary-content">
         <div class="grid-x align-center">
             <div class="cell medium-8 large-9">
                 <article role="article" class="content">
-                    <h1 id="potential-services-offered">Potential Services offered</h1>
-
-<h2 id="jupyterhub">JupyterHub</h2>
+                    <h3 id="jupyterhub">JupyterHub</h3>
 
 <ul>
   <li>
@@ -176,13 +139,13 @@ Web hosting for authorized access.</p>
   </li>
 </ul>
 
-<h2 id="binderhub">BinderHub</h2>
+<h3 id="binderhub">BinderHub</h3>
 <ul>
   <li>Users get custom links to recreate environments on CISL on-premise or 2i2c JupyterHub. <br /></li>
   <li>Provide a public or private Container Registry to host images created from GitHub repository. <br /></li>
 </ul>
 
-<h2 id="web-hosting">Web Hosting</h2>
+<h3 id="web-hosting">Web Hosting</h3>
 <ul>
   <li>
     <h4 id="visualization">Visualization</h4>
@@ -194,7 +157,7 @@ Provide unique publicly resolvable DNS names as defined by the user. <br /></p>
   </li>
 </ul>
 
-<h2 id="tutorials">Tutorials</h2>
+<h3 id="tutorials">Tutorials</h3>
 <ul>
   <li>Control student access to available resources. <br /></li>
   <li>Provide students with identical base image to level set starting point. <br /></li>
@@ -202,24 +165,31 @@ Provide unique publicly resolvable DNS names as defined by the user. <br /></p>
   <li>Allow console sharing &amp; viewing to assist instructor troubleshooting. <br /></li>
 </ul>
 
-<h2 id="data-access">Data Access</h2>
+<h3 id="data-access">Data Access</h3>
+
 <h4 id="glade-read-only">GLADE Read Only</h4>
 <ul>
-  <li>A read only NFS mount will be provided for us to utilize in providing access to datasets host on GLADE.
-    <h4 id="stratus-s3-buckets">STRATUS S3 buckets</h4>
-  </li>
+  <li>A read only NFS mount will be provided for us to utilize in providing access to datasets host on GLADE.</li>
+</ul>
+
+<h4 id="stratus-s3-buckets">STRATUS S3 buckets</h4>
+<ul>
   <li>We will be Administrators for allocated space on STRAUS and will manage buckets and users. <br /></li>
   <li>API access to buckets in the same fashion as AWS provide a familiar interface. <br /></li>
-  <li>Buckets can be used to host terraform state files if we decide to go that route. <br />
-    <h4 id="api">API</h4>
-  </li>
-  <li>We can utilize STRATUS and other offerings to create APIs to interact programmatically with datasets. <br />
-    <h4 id="file-sharing">File Sharing</h4>
-  </li>
+  <li>Buckets can be used to host terraform state files if we decide to go that route. <br /></li>
+</ul>
+
+<h4 id="api">API</h4>
+<ul>
+  <li>We can utilize STRATUS and other offerings to create APIs to interact programmatically with datasets. <br /></li>
+</ul>
+
+<h4 id="file-sharing">File Sharing</h4>
+<ul>
   <li>Offer a central location where model output and other data that has historically been hard to transfer can be served more easily to the users preferred location.</li>
 </ul>
 
-<h2 id="loggingmetrics">Logging/Metrics</h2>
+<h3 id="loggingmetrics">Logging/Metrics</h3>
 <ul>
   <li>Provide interactive dashboards for compute, storage, and networking resources. <br /></li>
   <li>Log all user interactions with our services in order to provide utilization and usage numbers. <br /></li>
@@ -227,7 +197,7 @@ Provide unique publicly resolvable DNS names as defined by the user. <br /></p>
   <li>Performance on the teams ability to meet Service Level Agreements (SLAs) will be recorded.</li>
 </ul>
 
-<h2 id="documentation-1">Documentation</h2>
+<h3 id="documentation-1">Documentation</h3>
 <ul>
   <li>Overall vision and goals will be presented as the project evolves to provide full visibility in to the objectives. <br /></li>
   <li>Implementation of all systems will be documented with code so that someone unfamiliar with the project could recreate the environment. <br /></li>
@@ -236,18 +206,18 @@ Provide unique publicly resolvable DNS names as defined by the user. <br /></p>
   <li>Provide details on Agile implementation and how to work with the team via that implementation. <br /></li>
 </ul>
 
-<h2 id="service-level-agreements-slas">Service Level Agreements (SLAs)</h2>
+<h3 id="service-level-agreements-slas">Service Level Agreements (SLA’s)</h3>
 <ul>
   <li>Defines and documents the operating procedures and commitments between providers and users. <br /></li>
   <li>SLAs will be defined and documented for each service so users and maintainers can operate with the same expectations. <br /></li>
 </ul>
 
-<h2 id="backupsdisaster-recovery-dr">Backups/Disaster Recovery (DR)</h2>
+<h3 id="backupsdisaster-recovery-dr">Backups/Disaster Recovery (DR)</h3>
 <ul>
   <li>Each supported service will have an associated and documented Backup and DR policy as part of the SLAs.</li>
 </ul>
 
-<h2 id="request-for-enhancement-rfes">Request For Enhancement (RFEs)</h2>
+<h3 id="request-for-enhancement-rfes">Request For Enhancement (RFEs)</h3>
 <ul>
   <li>Users will have an avenue for submitting RFEs and that process will be documented.</li>
 </ul>
@@ -256,7 +226,7 @@ Provide unique publicly resolvable DNS names as defined by the user. <br /></p>
             </div>
         </div>
     </section>
-        </div>
+    </div>
 
     <footer>
     <div class="grid-x grid-padding-y footer-menu-tertiary">
@@ -288,7 +258,7 @@ Provide unique publicly resolvable DNS names as defined by the user. <br /></p>
         </div>
     </div>
 </footer>
-    </div>
+</div>
 </body>
 
 <script src="/assets/koru-base/lib/jquery/dist/jquery.js"></script>

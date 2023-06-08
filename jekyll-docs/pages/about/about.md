@@ -1,10 +1,10 @@
 ---
 title: "NCAR | CISL Cloud Pilot"
-banner-button-url: https://jira.ucar.edu/secure/RapidBoard.jspa?rapidView=220&projectKey=CCPP
-banner-description: Check progress on our up to date Kanban
-banner-title: CISL Cloud Pilot
+banner-button-url: https://nicholascote.github.io/CCPPdocs/
+banner-description: Learn more about the how and why driving this effort
+banner-title: About the CISL Cloud Pilot
 layout: frontpage
-banner-button-text: Link to Kanban Page
+banner-button-text: Link to Technical Documentation
 ---
 
 # About this Project

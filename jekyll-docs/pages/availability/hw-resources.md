@@ -1,17 +1,13 @@
 ---
 title: "NCAR | CISL Cloud Pilot"
-banner-button-url: https://jira.ucar.edu/secure/RapidBoard.jspa?rapidView=220&projectKey=CCPP
-banner-description: Check progress on our up to date Kanban
-banner-title: CISL Cloud Pilot
-layout: frontpage
-banner-button-text: Link to Kanban Page
+layout: default
 ---
 
 # Hardware Resources
 
-## Initial Resources (5/1/23)
+### Initial Resources (5/1/23)
 
-### Compute Resources (5 Nodes)
+#### Compute Resources (5 Nodes)
 
 | System Information | Node Specifications |
 |---|---|
@@ -27,7 +23,7 @@ banner-button-text: Link to Kanban Page
 | NICs | 2x10G & 4x25G |
 | Storage | 2x100GB & 6x1.6TB NVMe |     
 
-#### Totals
+### Totals
 
 | CPU Cores | RAM | GPU Cores | GPU Mem | Local Storage |
 |---|---|---|---|---|

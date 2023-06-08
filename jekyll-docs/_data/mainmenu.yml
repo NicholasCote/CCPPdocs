@@ -11,22 +11,7 @@
     submenu:
       - title: Hardware 
         url: /pages/availability/hw-resources.html
-      - title: Potential Features 
-        url: /pages/availability/features.html
       - title: Potential Services  
         url: /pages/availability/services.html
-  - title: How-Tos
-    url: /pages/how-to/index.html
-    submenu:
-      - title: Agile Interaction
-        url: /pages/how-to/agile.html
-      - title: Build Documentation
-        url: /pages/how-to/build-docs.html
-      - title: Install JupyterHub on K8s
-        url: /pages/how-to/k8sJH/install.html
-      - title: Create custom Jupyter container
-        url: /pages/how-to/k8sJH/customize-docker.html
-      - title: Setup GitHub action to build and push Docker Images
-        url: /pages/how-to/k8sJH/setup-gh-act.html
   - title: Contact Us
     url: /pages/contact/contact.html
