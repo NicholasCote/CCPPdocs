@@ -75,13 +75,27 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">Documentation Site Build</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-make-sure-you-have-mkdocs-installed">1.  Make sure you have MkDocs installed</a>
+    <li class="toctree-l2"><a class="reference internal" href="#locally-with-mkdocs-serve">Locally with mkdocs serve</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-make-sure-you-have-mkdocs-installed">1.  Make sure you have MkDocs installed</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-clone-the-git-repository">2.  Clone the git repository</a>
+    <li class="toctree-l3"><a class="reference internal" href="#2-clone-the-git-repository">2.  Clone the git repository</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-change-in-to-docsdirectory">3.  Change in to docs/directory</a>
+    <li class="toctree-l3"><a class="reference internal" href="#3-change-in-to-docsdirectory">3.  Change in to docs/directory</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4-serve-content-with-mkdocs">4.  Serve content with MkDocs</a>
+    <li class="toctree-l3"><a class="reference internal" href="#4-serve-content-with-mkdocs">4.  Serve content with MkDocs</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#locally-with-docker">Locally with docker</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-pull-image-from-docker-hub">1. Pull image from Docker Hub</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-run-image">2. Run image</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-browse-to-website">3. Browse to Website</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#documentation-file-structure">Documentation file structure</a>
     </li>
@@ -129,6 +143,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="how-to-build-this-documentation">How to build this documentation</h1>
+<h2 id="locally-with-mkdocs-serve">Locally with mkdocs serve</h2>
 <h4 id="1-make-sure-you-have-mkdocs-installed">1.  Make sure you have MkDocs installed</h4>
 <pre><code>pip install mkdocs
 </code></pre>
@@ -142,14 +157,28 @@
 <pre><code>mkdocs serve
 </code></pre>
 <p><br></p>
+<h2 id="locally-with-docker">Locally with docker</h2>
+<h4 id="1-pull-image-from-docker-hub">1. Pull image from Docker Hub</h4>
+<pre><code>docker pull ncote/mkdocs_test:latest
+</code></pre>
+<h4 id="2-run-image">2. Run image</h4>
+<pre><code>docker run -p 8000:8000 ncote/mkdocs_test
+</code></pre>
+<h4 id="3-browse-to-website">3. Browse to Website</h4>
+<pre><code>[http://127.0.0.1:8000/secure/RapidBoard.jspa/](http://127.0.0.1:8000/secure/RapidBoard.jspa/)
+</code></pre>
 <hr>
 <h2 id="documentation-file-structure">Documentation file structure</h2>
 <pre><code>mkdocs.yml    # The configuration file.
 docs/
     css/
-       extra.css # Contains extra sytling for the site. 
+       extra.css # Contains extra styling for the site. 
     how-to/
-    agile.md # A description of the teams current Agile practices and policies
+        k8sJH/
+            customize-docker.md # Instructions on creating a customized Jupyter Docker image
+            install.md # Placeholder for actual JupyterHub K8s installation
+            setup-gh-actions.md # Walkthrough of setting up a GitHub action and workflow to build &amp; push the Docker image
+        agile.md # A description of the teams current Agile practices and policies
         build-docs.md # A how-to on building the documentation website
     images/
         * # All custom images used in the site
@@ -160,12 +189,17 @@ docs/
         extra.js # Defining how to implement the clipboard copy in our HTML
         popper.min.js # Used to have the Copied pop up on click
         tippy-bundle.umd.js # Used to have the Copied pop up on click
-    about.md # The project about trading
-    contact.md # How to interact with the team
-    features.md # A list of potential features for the project
+    overview/   
+        about.md # The project about trading
+        availability.md # List of current project availability 
+        contact.md # How to interact with the team
+        features.md # A list of potential features for the project
+        hw-resources.md # Initial specs of all the hardware components in the project
+        services.md # List of potential services we will offer
+        use-cases.md # A collection of different potential use cases
+    slas/
+        glade.md # SLAs for the GLADE storage system as defined by Advanced Research Computing (ARC)
     index.md  # The documentation homepage.
-    layout.md # Outline of site directories and files
-    services.md # List of potential services we will offer
 </code></pre>
               
             </div>
