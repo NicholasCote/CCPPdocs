@@ -19,6 +19,8 @@ nav:
         - Install JupyterHub on k8s: how-to/k8sJH/install.md
         - Customize Jupyter Docker Image: how-to/k8sJH/customize-docker.md
         - Setup GitHub Action to Build and Push Docker Image: how-to/k8sJH/setup-gh-act.md
+  - SLA's:
+      - GLADE: slas/glade.md
 theme: 
   name: readthedocs
   logo: 'images/ncar-cisl-white.png'

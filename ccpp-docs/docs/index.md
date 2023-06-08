@@ -25,4 +25,3 @@ NCAR | CISL runs Compute, Storage & Network hardware in robust Data Centers at m
 * Increase user visibility in to on-prem cloud offerings
 * Develop metrics to showcase project value & feasibility
 * Gain experience with Agile Project Management
-
