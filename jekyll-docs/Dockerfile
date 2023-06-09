@@ -10,13 +10,15 @@ WORKDIR /CCPPdocs/jekyll-docs
 
 RUN gem update --system && \
     gem install jekyll && \
-    gem cleanup
+    gem cleanup && \
+    bundle update sass && \
+    bundle update listen
 
 EXPOSE 4000
 FROM jekyll as jekyll-serve
 
 WORKDIR /CCPPdocs/jekyll-docs
 
-RUN bundle install --full-index
+RUN bundle install --full-index 
 
-CMD ["bundle", "exec", "jekyll", "serve"]
+CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]

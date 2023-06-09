@@ -1,0 +1,98 @@
+I"Ó<h3 id="jupyterhub">JupyterHub</h3>
+
+<ul>
+  <li>
+    <h4 id="on-prem">On-Prem</h4>
+    <p>Jupyter notebook servers with multiple pre-determined resources. <br />
+Web hosting for authorized access.</p>
+  </li>
+  <li>
+    <h4 id="2i2c-provided-aws-instance">2i2c Provided AWS Instance</h4>
+    <p>Jupyter notebook servers with multiple pre-determined resources. <br />
+Web hosting for authorized access.</p>
+  </li>
+</ul>
+
+<h3 id="binderhub">BinderHub</h3>
+<ul>
+  <li>Users get custom links to recreate environments on CISL on-premise or 2i2c JupyterHub. <br /></li>
+  <li>Provide a public or private Container Registry to host images created from GitHub repository. <br /></li>
+</ul>
+
+<h3 id="web-hosting">Web Hosting</h3>
+<ul>
+  <li>
+    <h4 id="visualization">Visualization</h4>
+  </li>
+  <li>
+    <h4 id="documentation">Documentation</h4>
+    <p>Offer dynamic or static web hosting. <br />
+Provide unique publicly resolvable DNS names as defined by the user. <br /></p>
+  </li>
+</ul>
+
+<h3 id="tutorials">Tutorials</h3>
+<ul>
+  <li>Control student access to available resources. <br /></li>
+  <li>Provide students with identical base image to level set starting point. <br /></li>
+  <li>Provision and tear down student workspaces in a quick and user friendly fashion. <br /></li>
+  <li>Allow console sharing &amp; viewing to assist instructor troubleshooting. <br /></li>
+</ul>
+
+<h3 id="data-access">Data Access</h3>
+
+<h4 id="glade-read-only">GLADE Read Only</h4>
+<ul>
+  <li>A read only NFS mount will be provided for us to utilize in providing access to datasets host on GLADE.</li>
+</ul>
+
+<h4 id="stratus-s3-buckets">STRATUS S3 buckets</h4>
+<ul>
+  <li>We will be Administrators for allocated space on STRAUS and will manage buckets and users. <br /></li>
+  <li>API access to buckets in the same fashion as AWS provide a familiar interface. <br /></li>
+  <li>Buckets can be used to host terraform state files if we decide to go that route. <br /></li>
+</ul>
+
+<h4 id="api">API</h4>
+<ul>
+  <li>We can utilize STRATUS and other offerings to create APIs to interact programmatically with datasets. <br /></li>
+</ul>
+
+<h4 id="file-sharing">File Sharing</h4>
+<ul>
+  <li>Offer a central location where model output and other data that has historically been hard to transfer can be served more easily to the users preferred location.</li>
+</ul>
+
+<h3 id="loggingmetrics">Logging/Metrics</h3>
+<ul>
+  <li>Provide interactive dashboards for compute, storage, and networking resources. <br /></li>
+  <li>Log all user interactions with our services in order to provide utilization and usage numbers. <br /></li>
+  <li>Make a determination for on-premise service feasibility based on the information collected. <br /></li>
+  <li>Performance on the teams ability to meet Service Level Agreements (SLAs) will be recorded.</li>
+</ul>
+
+<h3 id="documentation-1">Documentation</h3>
+<ul>
+  <li>Overall vision and goals will be presented as the project evolves to provide full visibility in to the objectives. <br /></li>
+  <li>Implementation of all systems will be documented with code so that someone unfamiliar with the project could recreate the environment. <br /></li>
+  <li>Interactions with cloud offerings will be documented fully so that end users know what services are offered and how to obtain or use those services. <br /></li>
+  <li>Service Level Agreements (SLAs) will be provided so that users know what level of service they can expect with their implementation. <br /></li>
+  <li>Provide details on Agile implementation and how to work with the team via that implementation. <br /></li>
+</ul>
+
+<h3 id="service-level-agreements-slas">Service Level Agreements (SLAâ€™s)</h3>
+<ul>
+  <li>Defines and documents the operating procedures and commitments between providers and users. <br /></li>
+  <li>SLAs will be defined and documented for each service so users and maintainers can operate with the same expectations. <br /></li>
+</ul>
+
+<h3 id="backupsdisaster-recovery-dr">Backups/Disaster Recovery (DR)</h3>
+<ul>
+  <li>Each supported service will have an associated and documented Backup and DR policy as part of the SLAs.</li>
+</ul>
+
+<h3 id="request-for-enhancement-rfes">Request For Enhancement (RFEs)</h3>
+<ul>
+  <li>Users will have an avenue for submitting RFEs and that process will be documented.</li>
+</ul>
+:ET
