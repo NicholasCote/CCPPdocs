@@ -9,8 +9,8 @@ RUN git clone https://github.com/NicholasCote/CCPPdocs.git
 WORKDIR /CCPPdocs/jekyll-docs
 
 RUN gem update --system && \
-    bundle update listen && \
     gem install jekyll && \
+    bundle update listen && \
     bundle update sass && \
     gem cleanup
 
@@ -19,6 +19,6 @@ FROM jekyll as jekyll-serve
 
 WORKDIR /CCPPdocs/jekyll-docs
 
-RUN bundle install
+RUN bundle install --full-index
 
 CMD ["bundle", "exec", "jekyll", "serve"]
