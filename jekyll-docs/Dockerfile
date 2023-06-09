@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN git clone https://github.com/NicholasCote/CCPPdocs.git
 WORKDIR /CCPPdocs/jekyll-docs
 
-RUN gem update --system && gem install jekyll && gem cleanup
+RUN gem update --system && bundle update listen && gem install jekyll && gem cleanup
 
 EXPOSE 4000
 FROM jekyll as jekyll-serve
