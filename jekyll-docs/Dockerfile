@@ -10,8 +10,6 @@ WORKDIR /CCPPdocs/jekyll-docs
 
 RUN gem update --system && \
     gem install jekyll && \
-    bundle update listen && \
-    bundle update sass && \
     gem cleanup
 
 EXPOSE 4000
