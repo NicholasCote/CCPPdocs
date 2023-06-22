@@ -1,0 +1,4 @@
+jupyter-book
+matplotlib
+numpy
+sphinx_rtd_theme
