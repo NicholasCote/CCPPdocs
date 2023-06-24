@@ -3,7 +3,7 @@
 
 title: CISL Cloud Pilot
 author: The CISL Cloud Pilot Team
-logo: images/ncar-cisl-blue.png
+logo: images/ncar-cisl-white.png
 email: "cisl-cloud-pilot@ucar.edu"
 
 # Force re-execution of notebooks on each build.
@@ -22,31 +22,47 @@ latex:
 bibtex_bibfiles:
   - references.bib
 
-# Information about where the book exists on the web
-repository:
-  url: https://github.com/NicholasCote/CCPPdocs # Online location of your book
-  path_to_book: jupyter-docs  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
-
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 #######################################################################################
 # HTML-specific settings
 html:
   announcement: "This project in currently in the Pilot phase"
-  favicon: images/favicon.ico
-  home_page_in_navbar: false
-  use_issues_button: true
-  use_repository_button: true
-  extra_navbar              : Visit our <a href="https://github.com/NCAR/cisl-cloud">GitHub Repository</a>
-    <div>This book is powered by <a href="https://jupyterbook.org">Jupyter Book</a></div>
 
 #######################################################################################
 # Launch button settings
-launch_buttons:
-  notebook_interface        : classic  # The interface interactive links will activate ["classic", "jupyterlab"]
-  binderhub_url             : "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
-  jupyterhub_url            : "https://jupyter.k8s.ucar.edu/"  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
+
 
 sphinx:
   config:
+    html_favicon: images/favicon.ico
+    html_last_updated_fmt: '%-d %B %Y'
+    html_theme: sphinx_pythia_theme
+    html_theme_options:
+      home_page_in_toc: false
+      repository_url: https://github.com/NicholasCote/CCPPdocs # Online location of your book
+      repository_branch: master
+      use_issues_button: true
+      use_repository_button: true
+      launch_buttons:
+        notebook_interface: jupyterlab  # The interface interactive links will activate ["classic", "jupyterlab"]
+        binderhub_url: "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
+        jupyterhub_url: "https://jupyter.k8s.ucar.edu/"  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
+      extra_navbar: |
+        Follow our <a href="https://jira.ucar.edu/secure/RapidBoard.jspa?rapidView=220&projectKey=CCPP">Kanban board</a><br>
+        Visit our <a href="https://github.com/NCAR/cisl-cloud">GitHub Repo</a><hr>
+        <div>Powered by <a href="https://jupyterbook.org">Jupyter Book</a></div><br>
+        Theme by <a href="https://projectpythia.org/">Project Pythia</a>
+      navbar_links:
+        - name: CISL Home
+          url: https://www2.cisl.ucar.edu/
+        - name: NCAR JupyterHub
+          url: https://jupyter.k8s.ucar.edu/
+        - name: 2i2c JupyterHub
+          url: https://ncar-cisl.2i2c.cloud/hub/login
+        - name: Rancher
+          url: https://rancher.k8s.ucar.edu/
+        - name: Report issue
+          url: https://jira.ucar.edu/secure/CreateIssueDetails!init.jspa?pid=18470&issuetype=10905
+      footer_logos:
+        NCAR: images/CISL-contemp-logo-blue.png

@@ -9,9 +9,18 @@ parts:
     - file: overview/use-cases
   - caption: Availability
     chapters:
-      - file: overview/availability
+      - title: Current Offering
+        file: overview/availability
+      - title: Hardware
+        file: overview/hw-resources
+      - title: Potential Services
+        file: overview/services
+      - title: Contact Us
+        file: overview/contact
   - caption: How-Tos 
     chapters:
+      - title: Agile Interaction
+        file: how-to/agile
       - title: JupyterHub on Kubernetes 
         file: how-to/k8sJH/k8sJH-intro
         sections:
@@ -21,4 +30,7 @@ parts:
         file: how-to/K8s/tf-intro
         sections:
         - file: how-to/K8s/tf-namespace
-
+  - caption: SLA's
+    chapters:
+      - title: GLADE
+        file: slas/glade

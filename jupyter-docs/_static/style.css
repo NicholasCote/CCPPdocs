@@ -8,6 +8,10 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.print-main-content {
+    background-color: #53565A;
+}
+
 .wy-side-nav-search {
     background-color: #1A658F;
 }
