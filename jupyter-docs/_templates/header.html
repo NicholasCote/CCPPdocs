@@ -1,0 +1,62 @@
+<header>
+    <div data-sticky-container="" class="sticky-container">
+        <div data-sticky="" data-options="marginTop:0;stickyOn:small;" data-top-anchor="main-content"
+             class="sticky is-anchored is-at-top">
+            <div class="top-bar align-top hide-for-print" id="top-bar">
+                <div class="grid-x">
+                    <div class="cell">
+                        <div class="grid-x align-middle">
+                            <div class="cell small-3 large-2">
+                                <div class="grid-x grid-margin-x nsf-logo">
+                                    <div class="cell small-4">
+                                        <div class="grid-x">
+                                            <div class="cell small-1 small-4 xlarge-3">
+                                                <p><a href="https://ncar.ucar.edu/who-we-are/funding">Sponsored By</a></p>
+                                                <a href="https://ncar.ucar.edu/who-we-are/funding"><img alt="NSF Logo" src="{{ site.github.baseurl }}{{ 'img/NSF_4-Color_bitmap_Logo.png' | relative_url }}"/></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div></div>
+                            <div class="cell small-6 large-8 top-bar-title logo-wrapper align-center">
+                                <h2 class="acronym-wrapper">
+                                    <a href="https://ncar.ucar.edu" title="NCAR Home">
+                                        <img src="{{ site.github.baseurl }}{{ 'img/logo-ncar-active-large.png' | relative_url }}"
+                                             alt="NCAR">
+                                        <span class="show-for-sr">NCAR</span>
+                                    </a>
+                                </h2>
+                                <h1><a href="{{ site.github.baseurl }}/">{{ site.title }}</a></h1>
+                            </div>
+                            <div class="cell small-3 large-2 text-right"><p class="ncar-title"><a href="https://ncar.ucar.edu">National Center for Atmospheric Research</a></p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-nav hide-for-print text-center" data-responsive-toggle="main-nav" data-hide-for="mlarge">
+                <div class="title-bar-title">Menu</div>
+                <button class="fa fa-chevron-down" type="button" data-toggle="main-nav"></button>
+            </div>
+            <div class="main-nav hide-for-print" id="main-nav">
+                <div class="grid-x">
+                <nav class="cell center mlarge-10 large-7">
+                    <ul class="menu icons icon-left" data-responsive-menu="accordion mlarge-dropdown">
+                        {% for link in site.data.mainmenu.menu %}
+                        <li aria-label="{{ link.title }}">
+                            <a class="text-center" href="{{ link.url }}">{{ link.title }}</a>
+                            {% if link.submenu %}
+                            <ul class="menu">
+                                <li aria-label="{{ link.title }}"><a class="text-center" href="{{ link.url }}">Overview</a></li>
+                                {% for sublink in link.submenu %}
+                                <li aria-label="{{ sublink.title }}"><a class="text-left" href="{{ sublink.url }}">{{ sublink.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

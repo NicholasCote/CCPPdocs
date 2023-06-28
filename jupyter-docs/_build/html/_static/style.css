@@ -6,10 +6,45 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    background-image: url("NCAR-Waves.png");
+    background-position: right 0% top 22%;
+    background-repeat: no-repeat;
+    background-color: #dbe2e9;
+}
+
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+
+h3 {
+    color: #1A658F;
 }
 
 .print-main-content {
     background-color: #53565A;
+}
+
+.bg-dark {
+    background-color: #012169;
+}
+
+.navbar-dark {
+    background-color: #012169;
+}
+
+.navbar {
+    background-color: #012169;
+}
+
+.navbar-expand-lg {
+    background-color: #012169;
+}
+
+.banner-main {
+    background-color: #012169;
 }
 
 .wy-side-nav-search {

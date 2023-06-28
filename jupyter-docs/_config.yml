@@ -22,16 +22,8 @@ latex:
 bibtex_bibfiles:
   - references.bib
 
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
-#######################################################################################
-# HTML-specific settings
-html:
-  announcement: "This project in currently in the Pilot phase"
-
 #######################################################################################
 # Launch button settings
-
 
 sphinx:
   config:
