@@ -34,6 +34,7 @@ sphinx:
       home_page_in_toc: false
       repository_url: https://github.com/NicholasCote/CCPPdocs # Online location of your book
       repository_branch: master
+      navbar_align: content
       use_issues_button: true
       use_repository_button: true
       launch_buttons:
@@ -56,5 +57,3 @@ sphinx:
           url: https://rancher.k8s.ucar.edu/
         - name: Report issue
           url: https://jira.ucar.edu/secure/CreateIssueDetails!init.jspa?pid=18470&issuetype=10905
-      footer_logos:
-        NCAR: images/CISL-contemp-logo-blue.png

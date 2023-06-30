@@ -1,70 +1,100 @@
-@import 'https://fonts.googleapis.com/css?family=Poppins:400,600,700';
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700');
 /* Hide "Edit On GitHub" section*/
-.wy-breadcrumbs-aside { display: none !important;}
 
 /* Gets rid of the top breadcrumb */
-.wy-breadcrumbs { display: none; }
+
+.footer-info {
+    background-color: #332f21 !important;
+    display:block;
+    float:left;
+    height: fit-content;
+    width: 100%;
+}
+
+.footer-menu-tertiary {
+    background-color: #332f21;
+    height: auto;
+    width: 100%;
+}
+
+.custom-footer {
+    background-color: #332f21  !important;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+footer small {
+    font-family: 'Poppins', Arial, sans-serif !important;
+    display:inline-block;
+    font-size: 16px;
+    height:68px;
+    padding: 21px 10px 19px;
+}
+
+footer a.custom-footer-link {
+    font-family: 'Poppins', Arial, sans-serif !important;
+    text-transform: uppercase;
+    font-size: 16px;
+    height:68px;
+    padding: 21px 10px 19px;
+}
+
+footer center {
+    margin-top: 50px !important;
+}
+
+.text-center {
+    text-align:center;
+}
+
+#navbar-main {
+    background-color: #012169 !important;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#navbar-main a {
+    color: #ffffff;
+    padding-left: 32px;
+}
 
 body {
-    font-family: Poppins, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif !important;
     font-size: 1rem;
     background-image: url("NCAR-Waves.png");
-    background-position: right 0% top 22%;
+    background-position: right top;
     background-repeat: no-repeat;
     background-color: #dbe2e9;
 }
 
 h1 {
     text-align: center;
-    font-size: 1.75rem;
+    font-size: 3rem !important;
+    text-transform: uppercase;
     font-weight: 700;
 }
+
 h2 {
     text-align: center;
-    font-size: 1.75rem;
+    font-size: 2.25rem !important;
+    text-transform: uppercase;
     font-weight: 600;
 }
 
 h3 {
-    font-size: 1.75rem;
+    font-size: 1.5rem !important;
     font-weight: 700;
-    color: #A8C700;
+    text-transform: uppercase;
+    color: #007fa3 !important;
 }
 
-.print-main-content {
-    background-color: #53565A;
-}
-
-.bg-dark {
-    background-color: #012169;
-}
-
-.navbar-dark {
-    background-color: #012169;
-}
-
-.navbar {
-    background-color: #012169;
-}
-
-.navbar-expand-lg {
-    background-color: #012169;
-}
-
-.banner-main {
-    background-color: #012169;
-}
-
-.wy-side-nav-search {
-    background-color: #1A658F;
-}
-
-.wy-body-for-nav {
-    background-color: #C3D7EE;
-}
-
-.wy-menu-vertical {
-    background-color: #53565A;
+#banner {
+    height: 60px;
+    color: #ffffff;
 }
 
 /* style code blocks */
@@ -112,3 +142,4 @@ code, .rst-content tt, .rst-content code {
     font-size: 16px;
     margin-left: -8px;
 }
+
