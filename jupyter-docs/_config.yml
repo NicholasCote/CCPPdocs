@@ -3,7 +3,7 @@
 
 title: CISL Cloud Pilot
 author: The CISL Cloud Pilot Team
-logo: images/ncar-cisl-white.png
+logo: images/CISL-contemp-logo-blue.png
 email: "cisl-cloud-pilot@ucar.edu"
 
 # Force re-execution of notebooks on each build.
@@ -49,11 +49,15 @@ sphinx:
       navbar_links:
         - name: CISL Home
           url: https://www2.cisl.ucar.edu/
-        - name: NCAR JupyterHub
-          url: https://jupyter.k8s.ucar.edu/
-        - name: 2i2c JupyterHub
-          url: https://ncar-cisl.2i2c.cloud/hub/login
-        - name: Rancher
-          url: https://rancher.k8s.ucar.edu/
+        - name: Resources
+          url: overview/services.html
+          dropdown: true 
+          dropdown_links:
+          - name: 'NCAR JupyterHub'
+            url: https://jupyter.k8s.ucar.edu/
+          - name: '2i2c JupyterHub'
+            url: https://ncar-cisl.2i2c.cloud/hub/login
+          - name: Rancher
+            url: https://rancher.k8s.ucar.edu/
         - name: Report issue
           url: https://jira.ucar.edu/secure/CreateIssueDetails!init.jspa?pid=18470&issuetype=10905

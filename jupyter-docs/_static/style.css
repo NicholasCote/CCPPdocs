@@ -1,8 +1,106 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700');
-/* Hide "Edit On GitHub" section*/
 
-/* Gets rid of the top breadcrumb */
+/* Right Side table of contents*/
+/* Done */
 
+.bd-toc {
+    background-color: #323133 !important;
+}
+
+#bd-toc-nav {
+    background-color: #323133 !important;
+}
+.onthispage i, .tocsection {
+    color: #ffffff !important;
+    font-size: 14px;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+}
+
+.toc-entry a {
+    color: #ffffff !important;
+    font-size: 14px;
+    font-weight: 600 !important;
+}
+
+/* Add a blue color to navbar links on hover */
+.toc-entry a:hover {
+    color: #007fa3 !important;
+}
+
+.section-nav {
+    color: #ffffff !important;
+}
+
+/* The navbar */
+/* DONE */
+/* The top level navbar */
+#navbar-main {
+    background-color: #ffffff !important;
+    text-transform: uppercase;
+    font-weight: 700;
+}     
+
+/* Links inside the navbar */
+#navbar-main a {
+    color: #000000;
+    font-family: 'Poppins', Arial, sans-serif !important;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Dropdown buttons inside the navbar */
+.dropbtn {
+    border: none;
+    outline: none;
+    background-color: inherit;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.53;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a blue color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn, .nav-link a:hover {
+    color: #007fa3 !important;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #252525 !important;
+    min-width: 17em !important;
+    font-family: 'Poppins', Arial, sans-serif !important;
+    z-index: 1;
+    padding: 20px 0px !important;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #ffffff !important;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    text-align: left;
+    text-decoration: none;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-transform: capitalize !important;
+    padding: 20px 20px !important;
+}
+
+/* Add a blue color to dropdown links on hover */
+.dropdown-content a:hover {
+    color: #007fa3 !important;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Footer Information */
+/* WORKING */
 .footer-info {
     background-color: #332f21 !important;
     display:block;
@@ -51,16 +149,8 @@ footer center {
     text-align:center;
 }
 
-#navbar-main {
-    background-color: #012169 !important;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-#navbar-main a {
-    color: #ffffff;
-    padding-left: 32px;
-}
+/* BODY */
+/* WORKING */
 
 body {
     font-family: 'Poppins', Arial, sans-serif !important;
@@ -70,6 +160,9 @@ body {
     background-repeat: no-repeat;
     background-color: #dbe2e9;
 }
+
+/* HEADERS */
+/* WORKING */
 
 h1 {
     text-align: center;
@@ -90,11 +183,6 @@ h3 {
     font-weight: 700;
     text-transform: uppercase;
     color: #007fa3 !important;
-}
-
-#banner {
-    height: 60px;
-    color: #ffffff;
 }
 
 /* style code blocks */
