@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700');
 
 /* Right Side table of contents*/
+/* Done */
 
 .bd-toc {
     background-color: #323133 !important;
@@ -184,27 +185,14 @@ h3 {
     color: #007fa3 !important;
 }
 
-/* style code blocks */
-pre code {
-    overflow: auto;
-    padding: 16px;
-    border-radius: 8px;
-    position: relative;
-    background-color: #f8f8f8;
-}
-
 code, .rst-content tt, .rst-content code {
-    overflow: auto;
-    color: inherit;
-    padding: 5px;
-    border-radius: 8px;
-    background-color: #f8f8f8;
-    display: inline-block;
+    overflow: scroll;
+    background-color: #e9ecef;
+    display: inline;
+    padding: 4px 8px;
+    border-radius: 4px;
     white-space: nowrap;
-    width: 92%;
-}
-.rst-content tt.literal,.rst-content tt.literal,.rst-content code.literal {
-    color: inherit;
+    border: 1px #c1c1c1;
 }
 
 .clipboard {

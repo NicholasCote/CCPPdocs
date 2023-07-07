@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Terraform on JupyterHub demo &#8212; CISL Cloud Pilot</title>
+    <title>Jupyter Book &#8212; CISL Cloud Pilot</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -55,8 +55,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Example: Creating a kubernetes namespace" href="tf-namespace.html" />
-    <link rel="prev" title="Setup GitHub actions to Build Docker image automatically" href="../k8sJH/setup-gh-act.html" />
+    <link rel="next" title="Create Documentation" href="create-jb.html" />
+    <link rel="prev" title="Agile Interaction" href="../agile.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -217,18 +217,18 @@ const thebe_selector_output = ".output, .cell_output"
    Agile Interaction
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../jupyter-book/jb-intro.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    Jupyter Book
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../jupyter-book/create-jb.html">
+    <a class="reference internal" href="create-jb.html">
      Create Documentation
     </a>
    </li>
@@ -256,18 +256,18 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../K8s/tf-intro.html">
    Terraform
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="tf-namespace.html">
+    <a class="reference internal" href="../K8s/tf-namespace.html">
      Example: Creating a kubernetes namespace
     </a>
    </li>
@@ -325,7 +325,7 @@ Theme by <a href="https://projectpythia.org/">Project Pythia</a>
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/how-to/K8s/tf-intro.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/how-to/jupyter-book/jb-intro.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -345,7 +345,7 @@ Theme by <a href="https://projectpythia.org/">Project Pythia</a>
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/NicholasCote/CCPPdocs/issues/new?title=Issue%20on%20page%20%2Fhow-to/K8s/tf-intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/NicholasCote/CCPPdocs/issues/new?title=Issue%20on%20page%20%2Fhow-to/jupyter-book/jb-intro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -366,31 +366,6 @@ Theme by <a href="https://projectpythia.org/">Project Pythia</a>
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> On this page
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installing-terraform-locally">
-   Installing Terraform locally
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-terraform-files">
-   Creating Terraform files
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#terraform-providers">
-     Terraform Providers
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -399,21 +374,21 @@ Theme by <a href="https://projectpythia.org/">Project Pythia</a>
               
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="terraform-on-jupyterhub-demo">
-<h1>Terraform on JupyterHub demo<a class="headerlink" href="#terraform-on-jupyterhub-demo" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://www.terraform.io/">Terraform</a> is an open source Infrastructure as Code (IaC) technology that is used to create and manage resources on varying <a class="reference external" href="https://registry.terraform.io/browse/providers">providers</a>.</p>
-<div class="section" id="installing-terraform-locally">
-<h2>Installing Terraform locally<a class="headerlink" href="#installing-terraform-locally" title="Permalink to this headline">¶</a></h2>
-<p>For this demonstration Terraform has already been installed on this JupyterHub instance. In order to install Terraform on your own machines follow the instructions for your operating system <a class="reference external" href="https://developer.hashicorp.com/terraform/downloads">here</a>.</p>
-</div>
-<div class="section" id="creating-terraform-files">
-<h2>Creating Terraform files<a class="headerlink" href="#creating-terraform-files" title="Permalink to this headline">¶</a></h2>
-<p>Terraform utilizes a proprietary language called HashiCorp Configuration Language as the lower level syntax for <a class="reference external" href="https://developer.hashicorp.com/terraform/language">Terraform language</a> which is used to create configuration files.</p>
-<div class="section" id="terraform-providers">
-<h3><a class="reference external" href="https://registry.terraform.io/browse/providers">Terraform Providers</a><a class="headerlink" href="#terraform-providers" title="Permalink to this headline">¶</a></h3>
-<p>Terraform enables API interaction with different services via a plugin called a provider. A Terraform file is needed to configure the required provider(s) for interaction with underlying services.</p>
-</div>
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="jupyter-book">
+<h1>Jupyter Book<a class="headerlink" href="#jupyter-book" title="Permalink to this headline">¶</a></h1>
+<p>Jupyter Book is an open-source tool for building publication-quality books and documents from computational material.</p>
+<p>Jupyter Book allows users to</p>
+<ul class="simple">
+<li><p>write their content in markdown files or Jupyter notebooks,</p></li>
+<li><p>include computational elements (e.g., code cells) in either type,</p></li>
+<li><p>include rich syntax such as citations, cross-references, and numbered equations, and</p></li>
+<li><p>using a simple command, run the embedded code cells, cache the outputs and convert this content into:</p>
+<ul>
+<li><p>a web-based interactive book and</p></li>
+<li><p>a publication-quality PDF.</p></li>
+</ul>
+</li>
+</ul>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -431,7 +406,7 @@ Theme by <a href="https://projectpythia.org/">Project Pythia</a>
         },
         kernelOptions: {
             name: "python3",
-            path: "./how-to/K8s"
+            path: "./how-to/jupyter-book"
         },
         predefinedOutput: true
     }
@@ -441,17 +416,17 @@ Theme by <a href="https://projectpythia.org/">Project Pythia</a>
               </div>
               <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../k8sJH/setup-gh-act.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../agile.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Setup GitHub actions to Build Docker image automatically</p>
+            <p class="prev-next-title">Agile Interaction</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="tf-namespace.html" title="next page">
+    <a class='right-next' id="next-link" href="create-jb.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Example: Creating a kubernetes namespace</p>
+        <p class="prev-next-title">Create Documentation</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -21,6 +21,10 @@ parts:
     chapters:
       - title: Agile Interaction
         file: how-to/agile
+      - title: Jupyter Book
+        file: how-to/jupyter-book/jb-intro
+        sections:
+          - file: how-to/jupyter-book/create-jb
       - title: JupyterHub on Kubernetes 
         file: how-to/k8sJH/k8sJH-intro
         sections:

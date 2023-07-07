@@ -12,6 +12,7 @@ execute:
   execute_notebooks: auto
   exclude_patterns:
     - '*how-to/K8s/tf-namespace*'
+    - '*how-to/jupyter-book/create-jb*'
 
 # Define the name of the latex output file for PDF builds
 latex:

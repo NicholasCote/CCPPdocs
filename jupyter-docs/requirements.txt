@@ -1,5 +1,2 @@
 jupyter-book
-matplotlib
-numpy
 sphinx_pythia_theme
-pydata-sphinx-theme
