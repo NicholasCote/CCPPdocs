@@ -36,29 +36,16 @@ sphinx:
       repository_url: https://github.com/NicholasCote/CCPPdocs # Online location of your book
       repository_branch: master
       navbar_align: content
-      use_issues_button: true
-      use_repository_button: true
+      use_issues_button: false
+      use_repository_button: false
       launch_buttons:
         notebook_interface: jupyterlab  # The interface interactive links will activate ["classic", "jupyterlab"]
-        binderhub_url: "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
-        jupyterhub_url: "https://jupyter.k8s.ucar.edu/"  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
+        #binderhub_url: "https://mybinder.org"  # The URL of the BinderHub (e.g., https://mybinder.org)
+        #jupyterhub_url: "https://jupyter.k8s.ucar.edu/"  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
       extra_navbar: |
-        Follow our <a href="https://jira.ucar.edu/secure/RapidBoard.jspa?rapidView=220&projectKey=CCPP">Kanban board</a><br>
-        Visit our <a href="https://github.com/NCAR/cisl-cloud">GitHub Repo</a><hr>
+        <p style="font-weight: 700;">The site has moved <a href="https://ncar.github.io/cisl-cloud/">here</a>.</p><hr>
         <div>Powered by <a href="https://jupyterbook.org">Jupyter Book</a></div><br>
         Theme by <a href="https://projectpythia.org/">Project Pythia</a>
       navbar_links:
-        - name: CISL Home
-          url: https://www2.cisl.ucar.edu/
-        - name: Resources
-          url: overview/services.html
-          dropdown: true 
-          dropdown_links:
-          - name: 'NCAR JupyterHub'
-            url: https://jupyter.k8s.ucar.edu/
-          - name: '2i2c JupyterHub'
-            url: https://ncar-cisl.2i2c.cloud/hub/login
-          - name: Rancher
-            url: https://rancher.k8s.ucar.edu/
-        - name: Report issue
-          url: https://jira.ucar.edu/secure/CreateIssueDetails!init.jspa?pid=18470&issuetype=10905
+        - name: Cloud Docs
+          url: "https://ncar.github.io/cisl-cloud/"

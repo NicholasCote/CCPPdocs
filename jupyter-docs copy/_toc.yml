@@ -1,0 +1,53 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+parts:
+  - chapters:
+    - file: overview/about
+    - file: overview/use-cases
+    - file: overview/goals
+  - caption: Availability
+    chapters:
+      - title: Current Offering
+        file: overview/availability
+      - title: Hardware
+        file: overview/hw-resources
+      - title: Potential Services
+        file: overview/services
+      - title: Contact Us
+        file: overview/contact
+  - caption: How-Tos 
+    chapters:
+      - title: Agile Interaction
+        file: how-to/agile
+      - title: Jupyter Book
+        file: how-to/jupyter-book/jb-intro
+        sections:
+          - file: how-to/jupyter-book/create-jb
+      - title: NCAR JupyterHub 
+        file: how-to/k8sJH/k8sJH-intro
+        sections:
+        - file: how-to/k8sJH/access
+        - file: how-to/k8sJH/user-info
+      - title: 2i2c JupyterHub 
+        file: how-to/2i2cJH/2i2cJH-intro
+        sections:
+        - file: how-to/2i2cJH/access
+        - file: how-to/2i2cJH/user-info
+      - title: JupyterHub on Kubernetes
+        file: how-to/k8sJH/jh-custom
+        sections:
+        - file: how-to/k8sJH/customize-docker
+        - file: how-to/k8sJH/setup-gh-act
+      - title: Rancher (K8s)
+        file: how-to/Rancher/rancher-intro
+      - title: Terraform
+        file: how-to/K8s/tf-intro
+        sections:
+        - file: how-to/K8s/tf-namespace
+  - caption: SLA's
+    chapters:
+      - title: GLADE
+        file: slas/glade

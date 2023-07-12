@@ -1,0 +1,1047 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Customize a Jupyter Docker Image for Single Users &#8212; CISL Cloud Pilot</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-pythia-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Setup GitHub actions to Build Docker image automatically" href="setup-gh-act.html" />
+    <link rel="prev" title="Using the NCAR k8s JupyterHub" href="jh-custom.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="132">
+    <div class="container-fluid" id="shim"></div>
+    <div class="container-fluid" id="banner"></div>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar shadow" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+
+<a class="navbar-brand" href="../../index.html">
+  <img src="../../_static/CISL-contemp-logo-blue.png" class="logo" alt="logo">
+</a>
+
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+
+       
+        
+            
+        
+        <li class="nav-item">
+            <a class="nav-link nav-internal" href="../../index.html">Cloud Docs</a>
+        </li>    
+    
+    
+    
+        <div class="dropdown">
+        
+            
+        
+            <li class="nav-item">
+                <button class="dropbtn">
+                    <a class="nav-link nav-internal" href="overview/services.html">
+                        Resources <i class="fa fa-chevron-down" style="color: #000000;"></i>
+                    </a>
+                </button>
+            </li>
+            <div class="dropdown-content">
+                
+                    <a class="dropdown-link" href="https://jupyter.k8s.ucar.edu/">
+                        NCAR JupyterHub
+                    </a><br>
+                
+                    <a class="dropdown-link" href="https://ncar-cisl.2i2c.cloud/hub/login">
+                        2i2c JupyterHub
+                    </a><br>
+                
+                    <a class="dropdown-link" href="https://rancher.k8s.ucar.edu/">
+                        Rancher
+                    </a><br>
+                
+            </div>
+        </div>
+    
+    
+       
+        
+            
+        
+        <li class="nav-item">
+            <a class="nav-link nav-internal" href="https://www2.cisl.ucar.edu/">CISL Home</a>
+        </li>    
+    
+    
+       
+        
+            
+        
+        <li class="nav-item">
+            <a class="nav-link nav-internal" href="https://jira.ucar.edu/secure/CreateIssueDetails!init.jspa?pid=18470&issuetype=10905">Report issue</a>
+        </li>    
+    
+    
+
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    <div class="container-xl">
+      <div class="row">
+        
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/about.html">
+   About this Project
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/use-cases.html">
+   Use Cases
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/goals.html">
+   Goals
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Availability
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/availability.html">
+   Current Offering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/hw-resources.html">
+   Hardware
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/services.html">
+   Potential Services
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/contact.html">
+   Contact Us
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  How-Tos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../agile.html">
+   Agile Interaction
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../jupyter-book/jb-intro.html">
+   Jupyter Book
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter-book/create-jb.html">
+     Create Documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="k8sJH-intro.html">
+   NCAR JupyterHub
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="access.html">
+     Requesting Access
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="user-info.html">
+     User Information
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../2i2cJH/2i2cJH-intro.html">
+   2i2c JupyterHub
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2i2cJH/access.html">
+     Requesting Access
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2i2cJH/user-info.html">
+     User Information
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="jh-custom.html">
+   JupyterHub on Kubernetes
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     How to Customize a Jupyter Docker Image for Single Users
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="setup-gh-act.html">
+     Setup GitHub actions to Build Docker image automatically
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Rancher/rancher-intro.html">
+   Rancher (K8s)
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../K8s/tf-intro.html">
+   Terraform
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../K8s/tf-namespace.html">
+     Example: Creating a kubernetes namespace
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  SLA's
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../slas/glade.html">
+   GLADE
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <p style="font-weight: 700;text-decoration: underline;color: red;">This site is currently in active development.</p>
+Follow our <a href="https://jira.ucar.edu/secure/RapidBoard.jspa?rapidView=220&projectKey=CCPP">Kanban board</a><br>
+Visit our <a href="https://github.com/NCAR/cisl-cloud">GitHub Repo</a><hr>
+<div>Powered by <a href="https://jupyterbook.org">Jupyter Book</a></div><br>
+Theme by <a href="https://projectpythia.org/">Project Pythia</a>
+
+</div>
+
+</div>
+
+        
+
+        <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main"><div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/how-to/k8sJH/customize-docker.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/NicholasCote/CCPPdocs"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/NicholasCote/CCPPdocs/issues/new?title=Issue%20on%20page%20%2Fhow-to/k8sJH/customize-docker.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> On this page
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dockerfile">
+   Dockerfile
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#environment-yml">
+   environment.yml
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#requirements-txt">
+   requirements.txt
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+          <div id="main-content" class="row">
+            <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+              
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="how-to-customize-a-jupyter-docker-image-for-single-users">
+<h1>How to Customize a Jupyter Docker Image for Single Users<a class="headerlink" href="#how-to-customize-a-jupyter-docker-image-for-single-users" title="Permalink to this headline">¶</a></h1>
+<p>The Jupyter environment spun up for the users can be customized by building on top of the base Jupyter Docker image. For this use case the docker-stacks-foundation image from Jupyter is used. That image is built from ubuntu:22.04.</p>
+<p>This example Dockerfile has comments inline to explain what the lines are doing</p>
+<div class="section" id="dockerfile">
+<h2>Dockerfile<a class="headerlink" href="#dockerfile" title="Permalink to this headline">¶</a></h2>
+<p>The following Dockerfile is built automatically anytime there is a push to the directory where it is stored via GitHub actions. Setting up a GitHub action to build and push a Docker image to Docker Hub can be viewed at the <a class="reference internal" href="setup-gh-act.html"><span class="doc std std-doc">Setup GitHub Action</span></a> section.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Borrowed heavily from the base-notebook Dockerfile by Jupyter
+# https://github.com/jupyter/docker-stacks/blob/main/base-notebook/Dockerfile
+# The shell scripts and python modules were developed by the Jupyter Development Team
+# This image provides a custom environment.yml and requirements.txt as well as
+# having some customizations injected into this Dockerfile 
+# The base image used is the docker-stacks-foundation by Jupyter
+# https://github.com/jupyter/docker-stacks/blob/main/docker-stacks-foundation/Dockerfile
+
+FROM jupyter/docker-stacks-foundation:latest
+
+LABEL maintainer=&quot;CISL Cloud Pilot Team &lt;cisl-cloud-pilot@ucar.edu&gt;&quot;
+
+# Fix: https://github.com/hadolint/hadolint/wiki/DL4006
+# Fix: https://github.com/koalaman/shellcheck/wiki/SC3014
+SHELL [&quot;/bin/bash&quot;, &quot;-o&quot;, &quot;pipefail&quot;, &quot;-c&quot;]
+
+USER root
+
+# Install all OS dependencies for notebook server that starts but lacks all
+# features (e.g., download as all possible file formats)
+RUN apt-get update --yes &amp;&amp; \
+    apt-get install --yes --no-install-recommends \
+    fonts-liberation \
+    curl \
+    emacs \
+    nodejs \
+    npm \
+    git \
+    vim \
+    # - pandoc is used to convert notebooks to html files
+    #   it&#39;s not present in aarch64 ubuntu image, so we install it here
+    pandoc \
+    # - run-one - a wrapper script that runs no more
+    #   than one unique  instance  of  some  command with a unique set of arguments,
+    #   we use `run-one-constantly` to support `RESTARTABLE` option
+    run-one &amp;&amp; \
+    apt-get clean &amp;&amp; rm -rf /var/lib/apt/lists/*
+
+USER ${NB_UID}
+
+# Install Jupyter Notebook, Lab, and Hub
+# Generate a notebook server config
+# Cleanup temporary files
+# Correct permissions
+# Do all this in a single RUN command to avoid duplicating all of the
+# files across image layers when the permissions change
+COPY configs/jupyter/base-notebook/environment.yml configs/jupyter/base-notebook/requirements.txt /tmp/
+
+WORKDIR /tmp
+RUN mamba install --quiet --yes \
+    # NodeJS &gt;= 18.0 is required for `jupyter lab build` command
+    # https://github.com/jupyter/docker-stacks/issues/1901
+    &#39;nodejs&gt;=18.0&#39; \
+    &#39;notebook&#39; \
+    &#39;jupyterhub&#39; \
+    &#39;jupyterlab==3.6.3&#39; \
+    &#39;conda-forge::nb_conda_kernels&#39; &amp;&amp; \
+    # Pin NodeJS
+    echo &#39;nodejs &gt;=18.0&#39; &gt;&gt; &quot;${CONDA_DIR}/conda-meta/pinned&quot; &amp;&amp; \
+    # nb_conda_kernels is required to save user environments as custom user notebook kernels that persist
+# Create a kernel named cisl-cloud-base from the environment.yml file
+    mamba env update --name cisl-cloud-base -f environment.yml &amp;&amp; \
+# Install nbgitpuller via pip 
+    pip install -r requirements.txt &amp;&amp; \
+    jupyter notebook --generate-config &amp;&amp; \
+    mamba clean --all -f -y &amp;&amp; \
+    npm cache clean --force &amp;&amp; \
+    jupyter lab clean &amp;&amp; \
+    mkdir -p .config/ &amp;&amp; \
+    mkdir -p .config/dask/ &amp;&amp; \
+    rm -rf &quot;/home/${NB_USER}/.cache/yarn&quot; &amp;&amp; \
+    fix-permissions &quot;${CONDA_DIR}&quot; &amp;&amp; \
+    fix-permissions &quot;/home/${NB_USER}&quot;
+
+ENV JUPYTER_PORT=8888
+EXPOSE $JUPYTER_PORT
+
+# Configure container startup
+CMD [&quot;start-notebook.sh&quot;]
+
+# Copy local files as late as possible to avoid cache busting
+COPY configs/jupyter/base-notebook/scripts/start-notebook.sh configs/jupyter/base-notebook/scripts/start-singleuser.sh /usr/local/bin/
+# Currently need to have both jupyter_notebook_config and jupyter_server_config to support classic and lab
+COPY configs/jupyter/base-notebook/scripts/jupyter_server_config.py configs/jupyter/base-notebook/scripts/docker_healthcheck.py /etc/jupyter/
+
+# Fix permissions on /etc/jupyter as root
+USER root
+
+RUN rm -rf /tmp/environment.yml &amp;&amp; \
+    rm -rf /tmp/requirements.txt
+# Legacy for Jupyter Notebook Server, see: [#1205](https://github.com/jupyter/docker-stacks/issues/1205)
+RUN sed -re &quot;s/c.ServerApp/c.NotebookApp/g&quot; \
+    /etc/jupyter/jupyter_server_config.py &gt; /etc/jupyter/jupyter_notebook_config.py &amp;&amp; \
+    fix-permissions /etc/jupyter/
+
+# Used to allow folder deletions
+RUN sed -i &#39;s/c.FileContentsManager.delete_to_trash = False/c.FileContentsManager.always_delete_dir = True/g&#39; /etc/jupyter/jupyter_server_config.py
+
+# HEALTHCHECK documentation: https://docs.docker.com/engine/reference/builder/#healthcheck
+# This healtcheck works well for `lab`, `notebook`, `nbclassic`, `server` and `retro` jupyter commands
+# https://github.com/jupyter/docker-stacks/issues/915#issuecomment-1068528799
+HEALTHCHECK --interval=5s --timeout=3s --start-period=5s --retries=3 \
+    CMD /etc/jupyter/docker_healthcheck.py || exit 1
+
+# Copy the .condarc file to allow for saving of user custom conda environments
+COPY configs/jupyter/base-notebook/config/.condarc /
+COPY configs/jupyter/base-notebook/config/.condarc /opt/conda/
+COPY configs/jupyter/base-notebook/config/.profile /.bash_profile
+COPY configs/jupyter/base-notebook/config/.bashrc /
+COPY configs/jupyter/base-notebook/config/.bashrc /etc/bash.bashrc
+COPY configs/jupyter/base-notebook/config/distributed.yml /
+
+# Switch back to jovyan to avoid accidental container runs as root
+USER ${NB_UID}
+
+WORKDIR &quot;${HOME}&quot;
+</pre></div>
+</div>
+</div>
+<div class="section" id="environment-yml">
+<h2>environment.yml<a class="headerlink" href="#environment-yml" title="Permalink to this headline">¶</a></h2>
+<p>The environment.yml file is where most of the python packages will be installed from via mamba. The following are the packages installed currently in the cisl-cloud-base conda kernel.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span> <span class="n">cisl</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">base</span>
+<span class="n">channels</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">dependencies</span><span class="p">:</span>
+<span class="c1"># Filesystem interface for Azure</span>
+<span class="c1"># https://pypi.org/project/adlfs/</span>
+  <span class="o">-</span> <span class="n">adlfs</span>
+<span class="c1"># Vega-Altair: A declarative statistical visualization library for Python.</span>
+<span class="c1"># https://pypi.org/project/altair/</span>
+  <span class="o">-</span> <span class="n">altair</span>
+<span class="c1"># Argo Data access</span>
+<span class="c1"># https://pypi.org/project/argopy/</span>
+  <span class="o">-</span> <span class="n">argopy</span>
+<span class="c1"># AWS Command Line Interface</span>
+<span class="c1"># https://pypi.org/project/awscli/</span>
+  <span class="o">-</span> <span class="n">awscli</span>
+<span class="c1"># Screen-scraping library</span>
+<span class="c1"># https://pypi.org/project/beautifulsoup4/</span>
+  <span class="o">-</span> <span class="n">beautifulsoup4</span>
+<span class="c1"># Interactive plots and applications in the browser from Python</span>
+<span class="c1"># https://pypi.org/project/bokeh/</span>
+  <span class="o">-</span> <span class="n">bokeh</span>
+<span class="c1"># AWS Software Development Kit (SDK)</span>
+<span class="c1"># https://pypi.org/project/boto3/</span>
+  <span class="o">-</span> <span class="n">boto3</span>
+<span class="c1"># Collection of fast NumPy array functions written in C</span>
+<span class="c1"># https://pypi.org/project/Bottleneck/</span>
+  <span class="o">-</span> <span class="n">bottleneck</span>
+<span class="c1"># Cartographic python library with Matplotlib support for visualization</span>
+<span class="c1"># https://pypi.org/project/Cartopy/0.21.1/</span>
+  <span class="o">-</span> <span class="n">cartopy</span>
+<span class="c1"># Interface to map GRIB files to NetCDF</span>
+<span class="c1"># https://pypi.org/project/cfgrib/</span>
+  <span class="o">-</span> <span class="n">cfgrib</span>
+<span class="c1"># Extended pickling support for Python objects</span>
+<span class="c1"># https://pypi.org/project/cloudpickle/</span>
+  <span class="o">-</span> <span class="n">cloudpickle</span>
+<span class="c1"># The Cython compiler for writing C extensions for the Python language.</span>
+<span class="c1"># https://pypi.org/project/Cython/</span>
+  <span class="o">-</span> <span class="n">cython</span>
+<span class="c1"># Parallel PyData with Task Scheduling</span>
+<span class="c1"># https://pypi.org/project/dask/</span>
+  <span class="o">-</span> <span class="n">dask</span>
+<span class="c1"># Library for interacting with a dask-gateway server</span>
+<span class="c1"># https://pypi.org/project/dask-gateway/</span>
+  <span class="o">-</span> <span class="n">dask</span><span class="o">-</span><span class="n">gateway</span>
+<span class="c1"># Library to deploy dask on HPC job queuing systems like PBS, Slurm, etc.</span>
+<span class="c1"># https://pypi.org/project/dask-jobqueue/</span>
+  <span class="o">-</span> <span class="n">dask</span><span class="o">-</span><span class="n">jobqueue</span>
+<span class="c1"># Use geometric objects as matplotlib paths and patches</span>
+<span class="c1"># https://pypi.org/project/descartes/</span>
+  <span class="o">-</span> <span class="n">descartes</span>
+<span class="c1"># serialize all of python</span>
+<span class="c1"># https://pypi.org/project/dill/</span>
+  <span class="o">-</span> <span class="n">dill</span>
+<span class="c1"># Client library for NASA Earthdata APIs</span>
+<span class="c1"># https://pypi.org/project/earthaccess/</span>
+  <span class="o">-</span> <span class="n">earthaccess</span>
+<span class="c1"># Empirical orthogonal function (EOF) analysis in Python</span>
+<span class="c1"># https://pypi.org/project/eofs/</span>
+  <span class="o">-</span> <span class="n">eofs</span>
+<span class="c1"># Python interface for ERDDAP</span>
+<span class="c1"># https://pypi.org/project/erddapy/</span>
+  <span class="o">-</span> <span class="n">erddapy</span>
+<span class="c1"># GroupBy operations for dask.array</span>
+<span class="c1"># https://pypi.org/project/flox/</span>
+  <span class="o">-</span> <span class="n">flox</span>
+<span class="c1"># File-system specification</span>
+<span class="c1"># https://pypi.org/project/fsspec/</span>
+  <span class="o">-</span> <span class="n">fsspec</span>
+<span class="c1"># Diffusion-based Spatial Filtering of Gridded Data</span>
+<span class="c1"># https://pypi.org/project/gcm-filters/</span>
+  <span class="o">-</span> <span class="n">gcm_filters</span>
+<span class="c1"># Filesystem interface for Google Cloud Storage</span>
+<span class="c1"># https://pypi.org/project/gcsfs/</span>
+  <span class="o">-</span> <span class="n">gcsfs</span>
+<span class="c1"># Tool to convert geopandas vector data into rasterized xarray data.</span>
+<span class="c1"># https://pypi.org/project/geocube/</span>
+  <span class="o">-</span> <span class="n">geocube</span>
+<span class="c1"># Geographic pandas extensions</span>
+<span class="c1"># https://pypi.org/project/geopandas/</span>
+  <span class="o">-</span> <span class="n">geopandas</span>
+<span class="c1"># Python Geocoding Toolbox</span>
+<span class="c1"># https://pypi.org/project/geopy/</span>
+  <span class="o">-</span> <span class="n">geopy</span>
+<span class="c1"># GeoViews is a Python library that makes it easy to explore and visualize geographical, meteorological, and oceanographic datasets</span>
+<span class="c1"># https://pypi.org/project/geoviews/</span>
+  <span class="o">-</span> <span class="n">geoviews</span><span class="o">-</span><span class="n">core</span>
+<span class="c1"># Temporary, well scoped credentials for pushing to GitHub</span>
+<span class="c1"># https://pypi.org/project/gh-scoped-creds/</span>
+  <span class="o">-</span> <span class="n">gh</span><span class="o">-</span><span class="n">scoped</span><span class="o">-</span><span class="n">creds</span>
+<span class="c1"># Gibbs Seawater Oceanographic Package of TEOS-10</span>
+<span class="c1"># https://pypi.org/project/gsw/</span>
+  <span class="o">-</span> <span class="n">gsw</span>
+<span class="c1"># netCDF4 via h5py</span>
+<span class="c1"># https://pypi.org/project/h5netcdf/</span>
+  <span class="o">-</span> <span class="n">h5netcdf</span>
+<span class="c1"># Read and write HDF5 files from Python</span>
+<span class="c1"># https://pypi.org/project/h5py/</span>
+  <span class="o">-</span> <span class="n">h5py</span>
+<span class="c1"># Stop plotting your data - annotate your data and let it visualize itself.</span>
+<span class="c1"># https://pypi.org/project/holoviews/</span>
+  <span class="o">-</span> <span class="n">holoviews</span>
+<span class="c1"># A high-level plotting API for the PyData ecosystem built on HoloViews.</span>
+<span class="c1"># https://pypi.org/project/hvplot/</span>
+  <span class="o">-</span> <span class="n">hvplot</span>
+<span class="c1"># Data load and catalog system</span>
+<span class="c1"># https://pypi.org/project/intake/</span>
+  <span class="o">-</span> <span class="n">intake</span>
+<span class="c1"># An intake plugin for parsing an Earth System Model (ESM) catalog and loading netCDF files and/or Zarr stores into Xarray datasets.</span>
+<span class="c1"># https://pypi.org/project/intake-esm/</span>
+  <span class="o">-</span> <span class="n">intake</span><span class="o">-</span><span class="n">esm</span>
+<span class="c1"># xarray plugins for Intake</span>
+<span class="c1"># https://pypi.org/project/intake-xarray/</span>
+  <span class="o">-</span> <span class="n">intake</span><span class="o">-</span><span class="n">xarray</span>
+<span class="c1"># IPython Kernel for Jupyter</span>
+<span class="c1"># https://pypi.org/project/ipykernel/</span>
+  <span class="o">-</span> <span class="n">ipykernel</span><span class="o">&gt;=</span><span class="mf">6.21.2</span>
+<span class="c1"># Matplotlib Jupyter Extension</span>
+<span class="c1"># https://pypi.org/project/ipympl/</span>
+  <span class="o">-</span> <span class="n">ipympl</span>
+<span class="c1"># Jupyter interactive widgets</span>
+<span class="c1"># https://pypi.org/project/ipywidgets/</span>
+  <span class="o">-</span> <span class="n">ipywidgets</span>
+<span class="c1"># Allows embedding of Jupyter widgets in Bokeh layouts.</span>
+<span class="c1"># https://pypi.org/project/ipywidgets-bokeh/</span>
+  <span class="o">-</span> <span class="n">ipywidgets</span><span class="o">-</span><span class="n">bokeh</span>
+<span class="c1"># A Jupyter extension for rendering Bokeh content.</span>
+<span class="c1"># https://pypi.org/project/jupyter-bokeh/</span>
+  <span class="o">-</span> <span class="n">jupyter_bokeh</span>
+<span class="c1"># Jupyter Server Proxy for Panel applications</span>
+<span class="c1"># https://pypi.org/project/jupyter-panel-proxy/</span>
+  <span class="o">-</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">panel</span><span class="o">-</span><span class="n">proxy</span>
+<span class="c1"># Jupyter Extension to show resource usage</span>
+<span class="c1"># https://pypi.org/project/jupyter-resource-usage/</span>
+  <span class="o">-</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">resource</span><span class="o">-</span><span class="n">usage</span>
+<span class="c1"># Functions to make reference descriptions for ReferenceFileSystem</span>
+<span class="c1"># https://pypi.org/project/kerchunk/</span>
+  <span class="o">-</span> <span class="n">kerchunk</span>
+<span class="c1"># Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API.</span>
+<span class="c1"># https://pypi.org/project/lxml/</span>
+  <span class="o">-</span> <span class="n">lxml</span>
+<span class="c1"># Python plotting package</span>
+<span class="c1"># https://pypi.org/project/matplotlib/</span>
+  <span class="o">-</span> <span class="n">matplotlib</span>
+<span class="c1"># Collection of tools for reading, visualizing and performing calculations with weather data.</span>
+<span class="c1"># https://pypi.org/project/MetPy/</span>
+  <span class="o">-</span> <span class="n">metpy</span>
+<span class="c1"># Strips outputs from Jupyter and IPython notebooks</span>
+<span class="c1"># https://pypi.org/project/nbstripout/</span>
+  <span class="o">-</span> <span class="n">nbstripout</span>
+<span class="c1"># Provides support for a cftime axis in matplotlib</span>
+<span class="c1"># https://pypi.org/project/nc-time-axis/</span>
+  <span class="o">-</span> <span class="n">nc</span><span class="o">-</span><span class="n">time</span><span class="o">-</span><span class="n">axis</span>
+<span class="c1"># Provides an object-oriented python interface to the netCDF version 4 library</span>
+<span class="c1"># https://pypi.org/project/netCDF4/</span>
+  <span class="o">-</span> <span class="n">netcdf4</span>
+<span class="c1"># compiling Python code using LLVM</span>
+<span class="c1"># https://pypi.org/project/numba/</span>
+  <span class="o">-</span> <span class="n">numba</span>
+<span class="c1"># Fast numerical expression evaluator for NumPy</span>
+<span class="c1"># https://pypi.org/project/numexpr/</span>
+  <span class="o">-</span> <span class="n">numexpr</span>
+<span class="c1"># Fundamental package for array computing in Python</span>
+<span class="c1"># https://pypi.org/project/numpy/</span>
+  <span class="o">-</span> <span class="n">numpy</span>
+<span class="c1"># Tooling for converting STAC metadata to ODC data model</span>
+<span class="c1"># https://pypi.org/project/odc-stac/</span>
+  <span class="o">-</span> <span class="n">odc</span><span class="o">-</span><span class="n">stac</span>
+<span class="c1"># A Python library to read/write Excel 2010 xlsx/xlsm files</span>
+<span class="c1"># https://pypi.org/project/openpyxl/</span>
+  <span class="o">-</span> <span class="n">openpyxl</span>
+<span class="c1"># Powerful data structures for data analysis, time series, and statistics</span>
+<span class="c1"># https://pypi.org/project/pandas/</span>
+  <span class="o">-</span> <span class="n">pandas</span>
+<span class="c1"># The powerful data exploration &amp; web app framework for Python.</span>
+<span class="c1"># https://pypi.org/project/panel/</span>
+  <span class="o">-</span> <span class="n">panel</span>
+<span class="c1"># A Python package for describing statistical models and for building design matrices.</span>
+<span class="c1"># https://pypi.org/project/patsy/</span>
+  <span class="o">-</span> <span class="n">patsy</span>
+<span class="c1"># Framework for Lagrangian tracking of virtual ocean particles in the petascale age.</span>
+<span class="c1"># https://pypi.org/project/parcels/</span>
+  <span class="o">-</span> <span class="n">parcels</span>
+<span class="c1"># Make your Python code clearer and more reliable by declaring Parameters.</span>
+<span class="c1"># https://pypi.org/project/param/</span>
+  <span class="o">-</span> <span class="n">param</span>
+<span class="c1"># Tools to support analysis of POP2-CESM model solutions with xarray</span>
+<span class="c1"># https://pypi.org/project/pop-tools/</span>
+  <span class="o">-</span> <span class="n">pop</span><span class="o">-</span><span class="n">tools</span>
+<span class="c1"># Protocol Buffers are a language-neutral, platform-neutral extensible mechanism for serializing structured data.</span>
+<span class="c1"># https://protobuf.dev/</span>
+  <span class="o">-</span> <span class="n">protobuf</span>
+<span class="c1"># An implementation of the Data Access Protocol.</span>
+<span class="c1"># https://pypi.org/project/pydap/</span>
+  <span class="o">-</span> <span class="n">pydap</span>
+<span class="c1"># Python library for working with Spatiotemporal Asset Catalog (STAC).</span>
+<span class="c1"># https://pypi.org/project/pystac/</span>
+  <span class="o">-</span> <span class="n">pystac</span>
+<span class="c1"># https://pypi.org/project/pystac-client/</span>
+  <span class="o">-</span> <span class="n">pystac</span><span class="o">-</span><span class="n">client</span>
+<span class="c1"># PyTables is a package for managing hierarchical datasets and designed to efficiently and easily cope with extremely large amounts of data</span>
+<span class="c1"># https://www.pytables.org/</span>
+  <span class="o">-</span> <span class="n">pytables</span>
+<span class="c1"># A framework for requesting AWIPS meteorological datasets from an EDEX server</span>
+<span class="c1"># https://pypi.org/project/python-awips/</span>
+  <span class="o">-</span> <span class="n">python</span><span class="o">-</span><span class="n">awips</span>
+<span class="c1"># Simple Python interface for Graphviz</span>
+<span class="c1"># https://pypi.org/project/graphviz/</span>
+  <span class="o">-</span> <span class="n">python</span><span class="o">-</span><span class="n">graphviz</span>
+<span class="c1"># Fast and direct raster I/O for use with Numpy and SciPy</span>
+<span class="c1"># https://pypi.org/project/rasterio/</span>
+  <span class="o">-</span> <span class="n">rasterio</span>
+<span class="c1"># A library for rechunking arrays.</span>
+<span class="c1"># https://pypi.org/project/rechunker/</span>
+  <span class="o">-</span> <span class="n">rechunker</span>
+<span class="c1"># Cloud Optimized GeoTIFF (COGEO) creation plugin for rasterio</span>
+<span class="c1"># https://pypi.org/project/rio-cogeo/</span>
+  <span class="o">-</span> <span class="n">rio</span><span class="o">-</span><span class="n">cogeo</span>
+<span class="c1"># geospatial xarray extension powered by rasterio</span>
+<span class="c1"># https://pypi.org/project/rioxarray/</span>
+  <span class="o">-</span> <span class="n">rioxarray</span>
+<span class="c1"># Convenient Filesystem interface over S3</span>
+<span class="c1"># https://pypi.org/project/s3fs/</span>
+  <span class="o">-</span> <span class="n">s3fs</span>
+<span class="c1"># Python package for earth-observing satellite data processing</span>
+<span class="c1"># https://pypi.org/project/satpy/</span>
+  <span class="o">-</span> <span class="n">satpy</span>
+<span class="c1"># Image processing in Python</span>
+<span class="c1"># https://pypi.org/project/scikit-image/</span>
+  <span class="o">-</span> <span class="n">scikit</span><span class="o">-</span><span class="n">image</span>
+<span class="c1"># A set of python modules for machine learning and data mining</span>
+<span class="c1"># https://pypi.org/project/scikit-learn/</span>
+  <span class="o">-</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span>
+<span class="c1"># Fundamental algorithms for scientific computing in Python</span>
+<span class="c1"># https://pypi.org/project/scipy/</span>
+  <span class="o">-</span> <span class="n">scipy</span>
+<span class="c1"># Statistical data visualization</span>
+<span class="c1"># https://pypi.org/project/seaborn/</span>
+  <span class="o">-</span> <span class="n">seaborn</span>
+<span class="c1"># A collection of Python utilities for interacting with the Unidata technology stack.</span>
+<span class="c1"># https://pypi.org/project/siphon/</span>
+  <span class="o">-</span> <span class="n">siphon</span>
+<span class="c1"># A web-based viewer for Python profiler output</span>
+<span class="c1"># https://pypi.org/project/snakeviz/</span>
+  <span class="o">-</span> <span class="n">snakeviz</span>
+<span class="c1"># Sparse n-dimensional arrays</span>
+<span class="c1"># https://pypi.org/project/sparse/</span>
+  <span class="o">-</span> <span class="n">sparse</span>
+<span class="c1"># Database Abstraction Library</span>
+<span class="c1"># https://pypi.org/project/SQLAlchemy/</span>
+  <span class="o">-</span> <span class="n">sqlalchemy</span>
+<span class="c1"># Load a STAC collection into xarray with dask</span>
+<span class="c1"># https://pypi.org/project/stackstac/</span>
+  <span class="o">-</span> <span class="n">stackstac</span>
+<span class="c1"># Statistical computations and models for Python</span>
+<span class="c1"># https://pypi.org/project/statsmodels/</span>
+  <span class="o">-</span> <span class="n">statsmodels</span>
+<span class="c1"># Computer algebra system (CAS) in Python</span>
+<span class="c1"># https://pypi.org/project/sympy/</span>
+  <span class="o">-</span> <span class="n">sympy</span>
+<span class="c1"># Pythonic interface to the TileDB array storage manager</span>
+<span class="c1"># https://pypi.org/project/tiledb/</span>
+  <span class="o">-</span> <span class="n">tiledb</span><span class="o">-</span><span class="n">py</span>
+<span class="c1"># fast python package for finding the timezone of any point on earth (coordinates) offline</span>
+<span class="c1"># https://pypi.org/project/timezonefinder/</span>
+  <span class="o">-</span> <span class="n">timezonefinder</span>
+<span class="c1"># Jupyter interactive widgets for Jupyter Notebook</span>
+<span class="c1"># https://pypi.org/project/widgetsnbextension/</span>
+  <span class="o">-</span> <span class="n">widgetsnbextension</span>
+<span class="c1"># N-D labeled arrays and datasets in Python</span>
+<span class="c1"># https://pypi.org/project/xarray/</span>
+  <span class="o">-</span> <span class="n">xarray</span>
+<span class="c1"># A collection of various tools for data analysis built on top of xarray and xgcm</span>
+<span class="c1"># https://pypi.org/project/xarrayutils/</span>
+  <span class="o">-</span> <span class="n">xarrayutils</span>
+<span class="c1"># Hierarchical tree-like data structures for xarray</span>
+<span class="c1"># https://pypi.org/project/xarray-datatree/</span>
+  <span class="o">-</span> <span class="n">xarray</span><span class="o">-</span><span class="n">datatree</span>
+<span class="c1"># An xarray extension for map plotting</span>
+<span class="c1"># https://pypi.org/project/xarray_leaflet/</span>
+  <span class="o">-</span> <span class="n">xarray_leaflet</span>
+<span class="c1"># xarray-based spatial analysis tools</span>
+<span class="c1"># https://pypi.org/project/xarray-spatial/</span>
+  <span class="o">-</span> <span class="n">xarray</span><span class="o">-</span><span class="n">spatial</span>
+<span class="c1"># Batch generation from Xarray objects</span>
+<span class="c1"># https://pypi.org/project/xbatcher/</span>
+  <span class="o">-</span> <span class="n">xbatcher</span>
+<span class="c1"># Climate indices computation package based on Xarray.</span>
+<span class="c1"># https://pypi.org/project/xclim/</span>
+  <span class="o">-</span> <span class="n">xclim</span>
+<span class="c1"># Universal Regridder for Geospatial Data</span>
+<span class="c1"># https://pypi.org/project/xesmf/</span>
+  <span class="o">-</span> <span class="n">xesmf</span>
+<span class="c1"># General Circulation Model Postprocessing with xarray</span>
+<span class="c1"># https://pypi.org/project/xgcm/</span>
+  <span class="o">-</span> <span class="n">xgcm</span>
+<span class="c1"># Fast, flexible, label-aware histograms for numpy and xarray</span>
+<span class="c1"># https://pypi.org/project/xhistogram/</span>
+  <span class="o">-</span> <span class="n">xhistogram</span>
+<span class="c1"># Analysis ready CMIP6 data the easy way</span>
+<span class="c1"># https://pypi.org/project/xmip/</span>
+  <span class="o">-</span> <span class="n">xmip</span>
+<span class="c1"># Read MITgcm mds binary files into xarray</span>
+<span class="c1"># https://pypi.org/project/xmitgcm/</span>
+  <span class="o">-</span> <span class="n">xmitgcm</span>
+<span class="c1"># Publish Xarray Datasets via a REST API.</span>
+<span class="c1"># https://pypi.org/project/xpublish/</span>
+  <span class="o">-</span> <span class="n">xpublish</span>
+<span class="c1"># Discrete Fourier Transform with xarray</span>
+<span class="c1"># https://pypi.org/project/xrft/</span>
+  <span class="o">-</span> <span class="n">xrft</span>
+<span class="c1"># An implementation of chunked, compressed, N-dimensional arrays for Python</span>
+<span class="c1"># https://pypi.org/project/zarr/</span>
+  <span class="o">-</span> <span class="n">zarr</span>
+<span class="c1"># Library for developers to extract data from Microsoft Excel (tm) spreadsheet files</span>
+<span class="c1"># https://pypi.org/project/xlrd3/</span>
+  <span class="o">-</span> <span class="n">xlrd</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="requirements-txt">
+<h2>requirements.txt<a class="headerlink" href="#requirements-txt" title="Permalink to this headline">¶</a></h2>
+<p>pip is used to install the following Jupyter extensions so they are available in the base image irregardless of the conda enviornment that is active.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nbgitpuller</span>
+<span class="n">jupyterlab</span><span class="o">-</span><span class="n">git</span>
+<span class="n">jupyter</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">proxy</span>
+<span class="n">dask</span><span class="o">-</span><span class="n">labextension</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./how-to/k8sJH"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="jh-custom.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Using the NCAR k8s JupyterHub</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="setup-gh-act.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Setup GitHub actions to Build Docker image automatically</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </div>
+          </div>
+        </main>
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+<footer class="footer">
+  <div class="container-fluid m-0 p-0">
+  
+    <div class="footer-item">
+    
+    </div>
+  
+    <div class="footer-item">
+    <style>
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700');
+</style>
+<div class="grid-x grid-padding-y footer-menu-tertiary">
+  <div class="cell text-center custom-footer">
+      <small>©  UCAR</small>
+          <a href="https://www.ucar.edu/privacy-notice" class="custom-footer-link">Privacy</a>
+          <a href="https://www.ucar.edu/cookie-other-tracking-technologies-notice" class="custom-footer-link">Cookies</a>
+          <a href="https://www.ucar.edu/terms-of-use" class="custom-footer-link">Terms of Use</a>
+          <a href="https://www.ucar.edu/notification-copyright-infringement-digital-millenium-copyright-act" class="custom-footer-link">Copyright Issues</a>
+          <a href="https://nsf.gov" class="custom-footer-link">Sponsored by NSF</a>
+          <a href="https://ncar.ucar.edu" class="custom-footer-link">NCAR Home</a>
+          <a href="https://www.ucar.edu" class="custom-footer-link">UCAR Home</a>
+      </ul>
+  </div>
+</div>
+    </div>
+  
+    <div class="footer-item">
+      <div class="container-fluid footer-info">
+    <div class="container-xl">
+      <div class="d-flex justify-content-center">
+        <p class="py-1 m-0">
+            &copy;&nbsp;2022.
+        
+          By The CISL Cloud Pilot Team.
+        
+          Last updated on 8 July 2023.
+        </p>
+      </div>
+    </div>
+  </div>
+    </div>
+  
+    <div class="footer-item">
+    <div class="container-fluid footer-extra">
+    <div class="container">
+      <center>
+        Theme by <a href="https://projectpythia.org">Project Pythia</a>. All code
+        in Pythia Foundations is licensed under Apache 2.0. All other non-code
+        content is licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          Creative Commons BY 4.0 (CC BY 4.0)</a
+        >.
+      </center>
+      <br />
+      <div class="row">
+        <p class="m-0">
+          <img
+            src="../../_static/footer-logo-nsf.png"
+            style="float: left; width: 60px; height: 60px; margin-right: 1rem"
+          />
+          This material is based upon work supported by the National Science
+          Foundation. Any opinions, findings,
+          and conclusions or recommendations expressed in this material are those
+          of the author(s) and do not necessarily reflect the views of the
+          National Science Foundation.
+        </p>
+      </div>
+    </div>
+  </div>
+    </div>
+  
+  </div>
+</footer>
+  </body>
+</html>

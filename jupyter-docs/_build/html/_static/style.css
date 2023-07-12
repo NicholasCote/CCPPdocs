@@ -167,21 +167,18 @@ body {
 h1 {
     text-align: center;
     font-size: 3rem !important;
-    text-transform: uppercase;
     font-weight: 700;
 }
 
 h2 {
     text-align: center;
     font-size: 2.25rem !important;
-    text-transform: uppercase;
     font-weight: 600;
 }
 
 h3 {
     font-size: 1.5rem !important;
     font-weight: 700;
-    text-transform: uppercase;
     color: #007fa3 !important;
 }
 
@@ -192,7 +189,6 @@ code, .rst-content tt, .rst-content code {
     padding: 4px 8px;
     border-radius: 4px;
     white-space: nowrap;
-    border: 1px #c1c1c1;
 }
 
 .clipboard {
@@ -218,3 +214,6 @@ code, .rst-content tt, .rst-content code {
     margin-left: -8px;
 }
 
+.note {
+    background-color: #ffffff;
+}

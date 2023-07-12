@@ -3,38 +3,3 @@
 
 format: jb-book
 root: index
-parts:
-  - chapters:
-    - file: overview/about
-    - file: overview/use-cases
-  - caption: Availability
-    chapters:
-      - title: Current Offering
-        file: overview/availability
-      - title: Hardware
-        file: overview/hw-resources
-      - title: Potential Services
-        file: overview/services
-      - title: Contact Us
-        file: overview/contact
-  - caption: How-Tos 
-    chapters:
-      - title: Agile Interaction
-        file: how-to/agile
-      - title: Jupyter Book
-        file: how-to/jupyter-book/jb-intro
-        sections:
-          - file: how-to/jupyter-book/create-jb
-      - title: JupyterHub on Kubernetes 
-        file: how-to/k8sJH/k8sJH-intro
-        sections:
-        - file: how-to/k8sJH/customize-docker
-        - file: how-to/k8sJH/setup-gh-act
-      - title: Terraform
-        file: how-to/K8s/tf-intro
-        sections:
-        - file: how-to/K8s/tf-namespace
-  - caption: SLA's
-    chapters:
-      - title: GLADE
-        file: slas/glade

@@ -1,0 +1,41 @@
+<ul id="navbar-main-elements" class="navbar-nav">
+{% for navbar_link in theme_navbar_links %}
+    {% if "dropdown" in navbar_link and navbar_link.dropdown %}
+        <div class="dropdown">
+        {% if "external" in navbar_link and navbar_link.external %}
+            {% set external = '<i class="fas fa-external-link-alt"></i>' %}
+        {% else %}
+            {% set external = '' %}
+        {% endif %}
+            <li class="nav-item">
+                <button class="dropbtn">
+                    <a class="nav-link nav-internal" href="{{ spt_pathto(navbar_link.url) }}">
+                        {{ _(navbar_link.name) }} <i class="fa fa-chevron-down" style="color: #000000;"></i>
+                    </a>
+                </button>
+            </li>
+            <div class="dropdown-content">
+                {% for dropdown_link in navbar_link.dropdown_links %}
+                    <a class="dropdown-link" href="{{ spt_pathto(dropdown_link.url) }}">
+                        {{ _(dropdown_link.name) }}
+                    </a><br>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}   
+        {% if "external" in navbar_link and navbar_link.external %}
+            {% set external = '<i class="fas fa-external-link-alt"></i>' %}
+        {% else %}
+            {% set external = '' %}
+        {% endif %}
+        <li class="nav-item">
+            <a class="nav-link nav-internal" href="{{ spt_pathto(navbar_link.url) }}">{{ _(navbar_link.name) }}{{ external }}</a>
+        </li>    
+    {% endif %}
+    {% endfor %}
+{% for external_link in theme_external_links %}
+<li class="nav-item">
+    <a class="nav-link nav-external" href="{{ external_link.url }}">{{ _(external_link.name) }}<i class="fas fa-external-link-alt"></i></a>
+</li>
+{% endfor %}
+</ul>
