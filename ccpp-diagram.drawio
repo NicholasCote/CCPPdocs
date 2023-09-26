@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-09-26T16:16:15.087Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="jXBbxTPjFsf35BpFdpaK" version="21.8.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-26T16:32:12.882Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="iGnWp_uEh1GFy7t9rw7P" version="21.8.2" type="github">
   <diagram name="Page-1" id="gHKBDr5t76uutiOnwRir">
     <mxGraphModel dx="3174" dy="2842" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1700" math="0" shadow="0">
       <root>
@@ -138,11 +138,20 @@
         <mxCell id="OqGSFoKqHse3q_Ia956D-10" value="&lt;font face=&quot;Verdana&quot; style=&quot;font-size: 20px;&quot;&gt;&lt;b&gt;Worker Nodes Bare Metal&lt;br&gt;Master Node VMs&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=270;" vertex="1" parent="1">
           <mxGeometry x="-460" y="334.5" width="310" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="OqGSFoKqHse3q_Ia956D-14" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="OqGSFoKqHse3q_Ia956D-14" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DF8C42;" vertex="1" parent="1">
           <mxGeometry x="830" y="630" width="200" height="180" as="geometry" />
         </mxCell>
         <mxCell id="OqGSFoKqHse3q_Ia956D-12" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#DF8C42;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.aws_s3;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="864.07" y="644" width="136" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="OqGSFoKqHse3q_Ia956D-16" value="&lt;font size=&quot;1&quot; color=&quot;#ffffff&quot;&gt;&lt;b style=&quot;font-size: 13px;&quot;&gt;AWS Data Exchange&lt;br&gt;S3&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="855" y="770" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OqGSFoKqHse3q_Ia956D-18" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="830" y="250" width="200" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="OqGSFoKqHse3q_Ia956D-17" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#005F4B;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam2.s3_compatible;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="874" y="270" width="112" height="112" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
