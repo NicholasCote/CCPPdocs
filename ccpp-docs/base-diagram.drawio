@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-13T23:32:35.300Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="yYXmk_Yn1gSz2v9F20GE" version="22.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-13T23:40:23.451Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="3fu73aX566SBTPLjt4jQ" version="22.1.0" type="github">
   <diagram name="Page-1" id="gHKBDr5t76uutiOnwRir">
     <mxGraphModel dx="3414" dy="1132" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1700" math="0" shadow="0">
       <root>
@@ -16,8 +16,8 @@
         <mxCell id="OqGSFoKqHse3q_Ia956D-2" value="Authentication via NCAR LDAP" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="232.58999999999997" y="950" width="132.81" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="OqGSFoKqHse3q_Ia956D-10" value="&lt;font face=&quot;Verdana&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Worker Nodes Bare Metal&lt;br&gt;Control Plane Nodes VMs&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=0;" parent="1" vertex="1">
-          <mxGeometry x="-409" y="480" width="220" height="50" as="geometry" />
+        <mxCell id="OqGSFoKqHse3q_Ia956D-10" value="&lt;b style=&quot;border-color: var(--border-color); font-family: Verdana; font-size: 14px;&quot;&gt;Worker Nodes Bare Metal&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Nvidia A2 Tensor GPUs&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Control Plane Nodes VMs&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=0;" parent="1" vertex="1">
+          <mxGeometry x="-409" y="475" width="220" height="60" as="geometry" />
         </mxCell>
         <mxCell id="OqGSFoKqHse3q_Ia956D-19" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="-399" y="565" width="200" height="405" as="geometry" />
