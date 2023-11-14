@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-13T23:53:47.572Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="aGLMtwXNr-EeXZhe3oyQ" version="22.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-14T00:05:20.287Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="vjOmvQW6JVfvk5u2j3XK" version="22.1.0" type="github">
   <diagram name="Page-1" id="gHKBDr5t76uutiOnwRir">
     <mxGraphModel dx="3414" dy="1132" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1700" math="0" shadow="0">
       <root>
@@ -323,6 +323,9 @@
         </mxCell>
         <mxCell id="5H82cT4nFViOrdQ1fUCQ-35" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;UCAR VPN&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="366.25" y="28" width="85.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VuCBpEzHt7xnNmzVIutF-2" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://helm.sh/img/helm.svg;" vertex="1" parent="1">
+          <mxGeometry x="610" y="259.82" width="234" height="270.18" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
